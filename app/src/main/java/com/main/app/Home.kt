@@ -13,6 +13,7 @@ class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        //hello
         setSupportActionBar(findViewById(R.id.my_toolbar))
 
         val fragmentHomeScreen = HomeScreen()
