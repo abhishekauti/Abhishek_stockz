@@ -30,6 +30,7 @@ class Home : AppCompatActivity() {
                     changeFragment(fragmentHomeScreen)
                     return@setOnItemSelectedListener true
                 }
+
                 R.id.portfolio_btn ->{
                     changeFragment(fragmentPortfolioScreen)
                     return@setOnItemSelectedListener true
