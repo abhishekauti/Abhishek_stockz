@@ -34,6 +34,7 @@ class Home : AppCompatActivity() {
                     changeFragment(fragmentPortfolioScreen)
                     return@setOnItemSelectedListener true
                 }
+
                 R.id.leaderboard_btn -> {
                     changeFragment(fragmentLeaderBoardScreen)
                     return@setOnItemSelectedListener true
