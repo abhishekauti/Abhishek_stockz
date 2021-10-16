@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_btn"
+        android:icon="@drawable/cartoon"
+        android:title="Home"/>
+
+
+    <item
+        android:title="Portfolio"
+        android:icon="@drawable/cartoon"
+        android:id="@+id/portfolio_btn"/>
+
+    <item
+        android:title="LeaderBoard"
+        android:id="@+id/leaderboard_btn"
+        android:icon="@drawable/cartoon"
+        />
+    <item
+        android:title="Settings"
+        android:id="@+id/settings_btn"
+        android:icon="@drawable/cartoon"
+        />
+
+<!--    <item-->
+<!--        android:title="Settings"-->
+<!--        android:id="@+id/settings_btn"-->
+<!--        android:icon="@drawable/cartoon"-->
+<!--        />-->
+
+
+</menu>

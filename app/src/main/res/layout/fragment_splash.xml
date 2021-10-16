@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+      android:background="#222157"
+    android:gravity="center_vertical"
+    tools:context=".fragments.SplashFragment">
+
+    <TextView
+        android:layout_width="386dp"
+        android:layout_height="386dp"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="15dp"
+        android:background="@drawable/messenger_button_white_bg_round"
+        android:backgroundTint="@color/white" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_gravity="center_vertical"
+        android:background="@mipmap/ck_logo_front" />
+
+
+</FrameLayout>

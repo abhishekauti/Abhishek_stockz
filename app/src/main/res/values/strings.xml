@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MainApplicationCK</string>
+    <string name="sliderscreen1_text">Real Time Stocks</string>
+    <string name="sliderscreen2_text">Watchlist, Simulator</string>
+    <string name="sliderscreen3_text">Welcome</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="loading">Loading...</string>
+    <string name="msg1text">Hey there..!! <br></br> This is your guide..!<br></br>You can call me Jupiter.!</string>
+    <string name="msg2text">Tell us your name<br></br> So we shall BEGIN</string>
+</resources>

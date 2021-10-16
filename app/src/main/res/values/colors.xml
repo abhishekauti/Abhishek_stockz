@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#3B4473</color>
+    <color name="royalblue">#405DE6</color>
+
+    <color name="screen1">#C13584</color>
+    <color name="active1">#833AB4</color>
+    <color name="inactive1">#9C833AB4</color>
+
+    <color name="screen2">#E1306C</color>
+    <color name="active2">#FD1D1D</color>
+    <color name="inactive2">#92FD1D1D</color>
+
+    <color name="screen3">#F56040</color>
+    <color name="active3">#F77737</color>
+    <color name="inactive3">#9FF77737</color>
+
+    <color name="yellow">#FCAF45</color>
+    <color name="lightyellow">#FFDC80</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <array name="active_active">
+        <item>@color/active1</item>
+        <item>@color/active2</item>
+        <item>@color/active3</item>
+    </array>
+    <array name="inactive">
+        <item>@color/inactive1</item>
+        <item>@color/inactive2</item>
+        <item>@color/inactive3</item>
+    </array>
+</resources>
