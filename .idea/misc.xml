@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/drawable/header_gradient.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_login.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_profile.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_home_screen.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_leader_board_screen.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_loading.xml" value="0.17552083333333332" />
@@ -22,5 +24,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.16666666666666666" />
+      </ProjectState>
+    </option>
   </component>
 </project>
