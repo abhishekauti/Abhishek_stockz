@@ -22,3 +22,4 @@ class IntroManager {
         return pref.getBoolean("check",true)
     }
 }
+//aaditi initial
