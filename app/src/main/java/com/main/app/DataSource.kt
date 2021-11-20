@@ -17,7 +17,7 @@ class DataSource {
             ))
 
             list.add(StockDetail(
-                "Zomato","Zomato",153.00,12.10
+                "Zomato","Zomato",152.00,12.10
             ))
 
             list.add(StockDetail(
