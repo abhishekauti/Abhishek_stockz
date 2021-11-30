@@ -1,7 +1,10 @@
 package com.main.app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.main.app.fragments.homeFragments.HomeScreen
@@ -16,10 +19,14 @@ class Home : AppCompatActivity() {
         //hello
         setSupportActionBar(findViewById(R.id.my_toolbar))
 
+
+
         val fragmentHomeScreen = HomeScreen()
         val fragmentLeaderBoardScreen = LeaderBoardScreen()
         val fragmentPortfolioScreen = PortfolioScreen()
         val fragmentSettingsScreen = SettingsScreen()
+
+
 
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragment_container_home,fragmentHomeScreen).commit()
