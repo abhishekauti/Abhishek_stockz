@@ -9,6 +9,7 @@ fun main() {
 
     ApiClient.apiKey["token"] = "c4abgbiad3if78059vsg"
     val apiClient = DefaultApi()
+    //
 
     val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
     val date = sdf.format(Date())

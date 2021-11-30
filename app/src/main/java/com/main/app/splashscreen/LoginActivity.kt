@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity(), FragmentCommunicator {
         super.onCreate(savedInstanceState)
 
 //        val introManager: IntroManager = IntroManager(this)
-//
+
 ////        not opening application for first time
 //        if (introManager.checkFirst()!=true) {
 //            introManager.setFirst(false)
