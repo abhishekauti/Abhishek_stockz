@@ -12,7 +12,7 @@ class IntroManager {
         pref = context.getSharedPreferences("first",0)
         editor = pref.edit()
     }
-
+//changes
     fun setFirst(isFirst : Boolean) {
         editor.putBoolean("check",isFirst)
         editor.commit()
