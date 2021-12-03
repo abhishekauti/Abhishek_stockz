@@ -8,8 +8,8 @@ class DataSource {
             val list = ArrayList<StockDetail>()
             list.add(
                 StockDetail(
-                "Vodafone Idea","Vodafone Idea",10.30,4.57
-            )
+                    "Vodafone Idea","Vodafone Idea",10.30,4.57
+                )
             )
 
             list.add(StockDetail(
