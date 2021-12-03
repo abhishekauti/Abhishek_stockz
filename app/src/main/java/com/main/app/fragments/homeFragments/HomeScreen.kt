@@ -10,11 +10,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import com.main.app.PaymentGateway
+import com.main.app.PaymentHistory
 import com.main.app.PracticeMode
 import com.main.app.R
 import com.razorpay.PaymentResultListener
 
-class HomeScreen : Fragment(), View.OnClickListener ,PaymentResultListener{
+class HomeScreen : Fragment(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +30,10 @@ class HomeScreen : Fragment(), View.OnClickListener ,PaymentResultListener{
         val view = inflater.inflate(R.layout.fragment_home_screen, container, false)
         val practiceMode = view.findViewById<Button>(R.id.practice_mode)
         val pay = view.findViewById<Button>(R.id.payment)
+        val paymentHistory = view.findViewById<Button>(R.id.btn_payment_history)
         practiceMode.setOnClickListener(this)
         pay.setOnClickListener(this)
+        paymentHistory.setOnClickListener(this)
         return view;
     }
 
@@ -44,14 +47,14 @@ class HomeScreen : Fragment(), View.OnClickListener ,PaymentResultListener{
             val intent = Intent(activity, PracticeMode::class.java)
             startActivity(intent)
         }
+        else if(v != null && v.id == R.id.btn_payment_history){
+            Toast.makeText(activity,"TODO Later",Toast.LENGTH_LONG).show()
+//            val intent = Intent(activity, PaymentHistory::class.java)
+//            startActivity(intent)
+        }
 
     }
-    override fun onPaymentSuccess(p0: String?) {
-        Toast.makeText(activity,"Payment Successful"+p0, Toast.LENGTH_LONG).show()
-    }
-    override fun onPaymentError(p0: Int, p1: String?) {
-        Toast.makeText(activity,"Payment UnSuccessful"+p1, Toast.LENGTH_LONG).show()
-    }
+
 
 
 }
