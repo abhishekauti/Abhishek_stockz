@@ -18,7 +18,10 @@
     <color name="yellow">#FCAF45</color>
     <color name="lightyellow">#FFDC80</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#79BCF1</color>
+
+    <color name="leaderFragment">#E2F68AAF</color>
+    <color name="portfolioFragment">#FF79BCF1</color>
 
     <color name="graylight">#fafafa</color>
     <color name="startblue">#09c6df</color>
