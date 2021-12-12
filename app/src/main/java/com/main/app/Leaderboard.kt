@@ -17,7 +17,7 @@ class Leaderboard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         //binding = ActivityLeaderboardBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_leaderboard)
-
+//since fragment is not working activity has been created and called
         val buttonClick=findViewById<Button>(R.id.leader)
         buttonClick.setOnClickListener {
             val Intent = Intent(this,leaderboardFragment::class.java)
