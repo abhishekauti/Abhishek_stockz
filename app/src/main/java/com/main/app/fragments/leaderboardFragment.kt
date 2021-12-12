@@ -21,15 +21,13 @@ class leaderboardFragment :Fragment(com.main.app.R.layout.leaderboardfragment) {
     private lateinit var userArrayList: ArrayList<User>
 
 
-    override fun onCreate(inflater: LayoutInflater, container: ViewGroup?,
-                          savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         super.onCreate(savedInstanceState)
         val view = inflater.inflate(com.main.app.R.layout.leaderboardfragment, container, false)
 
-        val cars: List<User>? = null // Obtenha sua lista de objetos aqui
 
-        val listView : ListView = view.findViewById(com.main.app.R.id.list_item)
+        val listView : ListView = view.findViewById<ListView>(com.main.app.R.id.list_item)
 
         val name= arrayOf(
             "Aaditi",
@@ -53,8 +51,13 @@ class leaderboardFragment :Fragment(com.main.app.R.layout.leaderboardfragment) {
             val user= User(name[i] , status[i] , img)
             userArrayList.add(user)
         }
-        // val listAdapter: userListAdapter = userListAdapter(context,userArrayList)
+         val listAdapter: userListAdapter = userListAdapter( activity,userArrayList)
+        listView.adapter = listAdapter
         return view
 
     }
-}
+
+
+
+
+    }
