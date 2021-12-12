@@ -27,33 +27,10 @@ class leaderboardFragment :Fragment(com.main.app.R.layout.leaderboardfragment) {
         val view = inflater.inflate(com.main.app.R.layout.leaderboardfragment, container, false)
 
 
-        val listView : ListView = view.findViewById<ListView>(com.main.app.R.id.list_item)
 
-        val name= arrayOf(
-            "Aaditi",
-            "Nikita",
-            "Aovi",
-            "Varsha",
-            "Suraj"
 
-        )
-
-        val status = arrayOf(
-            "Winner",
-            "Runner up",
-            "best",
-            "abcd",
-            "dfgh"
-        )
-        val img= com.main.app.R.drawable.sample;
-        userArrayList = ArrayList()
-        for(i in name.indices){
-            val user= User(name[i] , status[i] , img)
-            userArrayList.add(user)
-        }
-         val listAdapter: userListAdapter = userListAdapter( activity,userArrayList)
-        listView.adapter = listAdapter
         return view
+
 
     }
 

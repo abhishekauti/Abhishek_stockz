@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MainApplicationCK">
         <activity
+            android:name=".leaderBoardFragment"
+            android:exported="false" />
+        <activity
             android:name=".Leaderboard"
             android:exported="true">
             <intent-filter>
@@ -18,15 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Profile"
             android:exported="false" />
         <activity android:name=".Home" />
         <activity android:name=".splashscreen.LoginActivity" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".PracticeMode" />
     </application>
 
