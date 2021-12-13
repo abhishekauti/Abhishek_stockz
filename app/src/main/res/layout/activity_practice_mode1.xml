@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--toolbar-->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbaar_pl1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/header_gradient"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="League"
+                android:textStyle="bold"
+                android:textSize="32sp"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:layout_weight="0.8"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:layout_height="match_parent"
+                android:src="@drawable/dots"
+                />
+        </LinearLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Select Specifications"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="48dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.9"
+                    android:text="Starting Portfolio"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/hint"
+                    android:layout_weight="0.1"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="12dp"
+                    />
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/spinner_starting_portfolio"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="52dp"
+                android:paddingLeft="8dp"
+                android:entries="@array/spinnerItems"/>
+
+
+            <!--            marketplace-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.9"
+                    android:text="Marketplace"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/hint"
+                    android:layout_weight="0.1"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="12dp"
+                    />
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/spinner_market_portfolio"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="52dp"
+                android:paddingLeft="8dp"
+                android:entries="@array/spinnerItems"/>
+
+
+            <!--            Timeframe-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.9"
+                    android:text="Time Frame"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/hint"
+                    android:layout_weight="0.1"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="12dp"
+                    />
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/spinner_timeframe"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="52dp"
+                android:paddingLeft="8dp"
+                android:entries="@array/spinnerItems"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Create Game"/>
+
+</LinearLayout>
