@@ -187,8 +187,9 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_next_pm"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Create Game"/>
+        android:text="Next"/>
 
 </LinearLayout>
