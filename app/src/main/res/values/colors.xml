@@ -26,6 +26,7 @@
     <color name="graylight">#fafafa</color>
     <color name="startblue">#09c6df</color>
     <color name="endblue">#0bcce6</color>
+
     
     <array name="active_active">
         <item>@color/active1</item>

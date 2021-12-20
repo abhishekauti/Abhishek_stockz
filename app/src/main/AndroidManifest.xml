@@ -10,11 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MainApplicationCK">
         <activity
-            android:name=".leaderBoardFragment"
-            android:exported="false" />
+            android:name=".test"
+            android:exported="false"
+            android:label="@string/title_activity_test"
+            android:theme="@style/Theme.MainApplicationCK.NoActionBar" />
         <activity
-            android:name=".Leaderboard"
-            android:exported="true">
+            android:name=".Leagues"
+            android:exported="true"
+            android:label="@string/title_activity_leagues"
+            android:theme="@style/Theme.MainApplicationCK.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,11 +26,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".leaderBoardFragment"
+            android:exported="false" />
+        <activity
+            android:name=".Leaderboard"
+            android:exported="false"></activity>
+        <activity
             android:name=".Profile"
             android:exported="false" />
         <activity android:name=".Home" />
         <activity android:name=".splashscreen.LoginActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".PracticeMode" />
     </application>
 
