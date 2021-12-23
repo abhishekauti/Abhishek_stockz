@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.main.app">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,6 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MainApplicationCK">
+        <activity
+            android:name=".test"
+            android:exported="false"
+            android:label="@string/title_activity_test"
+            android:theme="@style/Theme.MainApplicationCK.NoActionBar" />
+        <activity
+            android:name=".Leagues"
+            android:exported="true"
+            android:label="@string/title_activity_leagues"
+            android:theme="@style/Theme.MainApplicationCK.NoActionBar">
         <activity android:name=".practice.PracticeMode2"></activity>
         <activity android:name=".practice.PracticeMode1" />
         <activity android:name=".Home"></activity>
@@ -21,6 +32,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".leaderBoardFragment"
+            android:exported="false" />
+        <activity
+            android:name=".Leaderboard"
+            android:exported="false"></activity>
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity android:name=".Home" />
+        <activity android:name=".splashscreen.LoginActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".PracticeMode" />
         <activity android:name=".MainActivity" />
         <activity android:name=".PracticeMode" />
         <activity android:name=".PaymentHistory" />
