@@ -10,12 +10,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import com.main.app.PaymentGateway
-import com.main.app.PaymentHistory
 import com.main.app.PracticeMode
 import com.main.app.R
-import com.main.app.practice.PracticeMode1
-import com.main.app.practice.PracticeMode2
-import com.razorpay.PaymentResultListener
+import com.main.app.practice.PracticeModeActivity
 
 class HomeScreen : Fragment(), View.OnClickListener {
 
@@ -33,14 +30,12 @@ class HomeScreen : Fragment(), View.OnClickListener {
         val practiceMode = view.findViewById<Button>(R.id.practice_mode)
         val pay = view.findViewById<Button>(R.id.payment)
         val paymentHistory = view.findViewById<Button>(R.id.btn_payment_history)
-        val firstScreen = view.findViewById<Button>(R.id.btn_first_screen)
-        val secondScreen = view.findViewById<Button>(R.id.btn_second_screen)
+        val firstScreen = view.findViewById<Button>(R.id.btn_pm_screen)
 
         practiceMode.setOnClickListener(this)
         pay.setOnClickListener(this)
         paymentHistory.setOnClickListener(this)
         firstScreen.setOnClickListener(this)
-        secondScreen.setOnClickListener(this)
         return view;
     }
 
@@ -59,14 +54,11 @@ class HomeScreen : Fragment(), View.OnClickListener {
 //            val intent = Intent(activity, PaymentHistory::class.java)
 //            startActivity(intent)
         }
-        else if(v != null && v.id == R.id.btn_first_screen){
-              val intent = Intent(activity,PracticeMode1::class.java)
+        else if(v != null && v.id == R.id.btn_pm_screen){
+              val intent = Intent(activity,PracticeModeActivity::class.java)
               startActivity(intent)
         }
-        else if(v != null && v.id == R.id.btn_second_screen){
-            val intent = Intent(activity, PracticeMode2::class.java)
-            startActivity(intent)
-        }
+
 
 
     }
