@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.main.app">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +22,10 @@
             android:exported="true"
             android:label="@string/title_activity_leagues"
             android:theme="@style/Theme.MainApplicationCK.NoActionBar">
+        <activity android:name=".practice.PracticeMode2"></activity>
+        <activity android:name=".practice.PracticeMode1" />
+        <activity android:name=".Home"></activity>
+        <activity android:name=".splashscreen.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,6 +45,9 @@
         <activity android:name=".splashscreen.LoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".PracticeMode" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".PracticeMode" />
+        <activity android:name=".PaymentHistory" />
     </application>
 
 </manifest>
