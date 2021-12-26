@@ -5,86 +5,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     android:orientation="vertical">
 
     <!--toolbar-->
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbaar_pl1"
+<com.google.android.material.textview.MaterialTextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textSize="40sp"
+    android:textColor="@color/black"
+    android:textStyle="bold"
+    android:layout_margin="5dp"
+    android:fontFamily="sans-serif-black"
+    android:text="Practice Mode"
+    />
+    <View
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/header_gradient"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:text="League"
-                android:textStyle="bold"
-                android:textSize="32sp"
-                android:textColor="#ffffff"
-                android:gravity="center"
-                android:layout_weight="0.8"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="0.1"
-                android:layout_height="match_parent"
-                android:src="@drawable/dots"
-                />
-        </LinearLayout>
-    </com.google.android.material.appbar.MaterialToolbar>
-
+        android:layout_height="3dp"
+        android:background="@android:color/black" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Select Specifications"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textColor="#000000"
         android:gravity="center"/>
 
-    <LinearLayout
+    <ScrollView
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="48dp">
+            android:layout_margin="40dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
+                android:weightSum="1"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
                     android:text="Starting Portfolio"
                     android:textColor="#000000"
                     android:textStyle="bold"
-                    android:textSize="16sp"
+                    android:textSize="20dp"
                     android:gravity="center_vertical"
-                    android:paddingLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginLeft="16dp"/>
+                    android:padding="5dp"/>
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/hint"
-                    android:layout_weight="0.1"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginTop="12dp"
+                <ImageButton
+                    android:id="@+id/infoBtnPortfolio"
+                    android:layout_width="40dp"
+                    android:layout_weight="0.2"
+                    android:backgroundTint="@color/white"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/info"
                     />
 
             </LinearLayout>
@@ -93,103 +80,154 @@
                 android:id="@+id/spinner_starting_portfolio"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="52dp"
                 android:paddingLeft="8dp"
                 android:entries="@array/spinnerItems"/>
 
-
+            </LinearLayout>
             <!--            marketplace-->
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:weightSum="1"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.9"
-                    android:text="Marketplace"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginLeft="16dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:text="Marketplace"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:gravity="center_vertical"
+                        android:padding="5dp"/>
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/hint"
-                    android:layout_weight="0.1"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginTop="12dp"
-                    />
+                    <ImageButton
+                        android:id="@+id/infoBtnMarketPlace"
+                        android:layout_width="40dp"
+                        android:layout_weight="0.2"
+                        android:backgroundTint="@color/white"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/info"
+                        />
+
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spinner_marketplace"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:entries="@array/spinnerItems"/>
 
             </LinearLayout>
-
-            <Spinner
-                android:id="@+id/spinner_market_portfolio"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="52dp"
-                android:paddingLeft="8dp"
-                android:entries="@array/spinnerItems"/>
 
 
             <!--            Timeframe-->
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:weightSum="1"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.9"
-                    android:text="Time Frame"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginLeft="16dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:text="Time Frame"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:gravity="center_vertical"
+                        android:padding="5dp"/>
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/hint"
-                    android:layout_weight="0.1"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginTop="12dp"
+                    <ImageButton
+                        android:id="@+id/infoBtnTimeFrame"
+                        android:layout_width="40dp"
+                        android:layout_weight="0.2"
+                        android:backgroundTint="@color/white"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/info"
+                        />
+
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spinner_timeframe"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:entries="@array/spinnerItems"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:weightSum="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:text="Gameplay Type"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:gravity="center_vertical"
+                        android:padding="5dp"/>
+
+                    <ImageButton
+                        android:id="@+id/infoBtnGameType"
+                        android:layout_width="40dp"
+                        android:layout_weight="0.2"
+                        android:backgroundTint="@color/white"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/info"
+                        />
+
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spinner_gameplay_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:entries="@array/spinnerItems_gameplay"
                     />
 
             </LinearLayout>
 
-            <Spinner
-                android:id="@+id/spinner_timeframe"
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/createGameBtn"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="52dp"
-                android:paddingLeft="8dp"
-                android:entries="@array/spinnerItems"/>
-
-        </LinearLayout>
-
-
-
+                android:layout_height="60dp"
+                android:textSize="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/yellow"
+                android:text="Create Game"/>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_next_pm"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Next"/>
 
+
+</ScrollView>
 </LinearLayout>

@@ -1,12 +1,10 @@
 package com.main.app
 
-import android.content.DialogInterface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import androidx.appcompat.app.AppCompatActivity
 
 class Leagues : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +40,6 @@ class Leagues : AppCompatActivity() {
 
     }
     fun showAlertDialog(view: View){
-        CustomDialog().show(supportFragmentManager,"dialog cc")
 
     }
 }

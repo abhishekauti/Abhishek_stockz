@@ -1,21 +1,25 @@
 package com.main.app.fragments.practicemode
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.ImageButton
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
+import com.google.android.material.button.MaterialButton
 import com.main.app.R
 
 
 class PracticeModeFragment1 : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    lateinit var createGameBtn : MaterialButton
 
-    }
+    //info btns
+    lateinit var infoBtnPortfolio : ImageButton
+    lateinit var infoBtnMarketPlace : ImageButton
+    lateinit var infoBtnTimeFrame : ImageButton
+    lateinit var infoBtnGamePlay : ImageButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,13 +27,28 @@ class PracticeModeFragment1 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_practice_mode1, container, false)
+        createGameBtn = view.findViewById(R.id.createGameBtn)
 
-        val next = view.findViewById<Button>(R.id.btn_next_pm)
-        next.setOnClickListener(View.OnClickListener {
-            val fm = fragmentManager?.beginTransaction()
-            fm?.replace(R.id.practice_mode_containerview, PracticeModeFragment2())?.commit()
-        })
+        infoBtnPortfolio = view.findViewById(R.id.infoBtnPortfolio)
+        infoBtnMarketPlace = view.findViewById(R.id.infoBtnMarketPlace)
+        infoBtnTimeFrame = view.findViewById(R.id.infoBtnTimeFrame)
+        infoBtnGamePlay = view.findViewById(R.id.infoBtnGameType)
+
+//        val alertDialog  = AlertDialog.Builder(this)
+
+        infoBtnGamePlay.setOnClickListener {
+//TODO Show Dialog
+        }
+
+        createGameBtn.setOnClickListener {
+            showPracticeModeInstructions()
+        }
+
         return view
+    }
+
+    private fun showPracticeModeInstructions() {
+        TODO("Not yet implemented")
     }
 
 }
