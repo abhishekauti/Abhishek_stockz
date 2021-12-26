@@ -32,7 +32,7 @@ class Leagues : AppCompatActivity() {
         val visibilityview=findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView6)
         //val createGame=findViewById<Button>(R.id.createGame)
 
-        //adapter
+        //adapter added
         var arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, timeFrame)
 
         gameview.setAdapter(arrayAdapter)
