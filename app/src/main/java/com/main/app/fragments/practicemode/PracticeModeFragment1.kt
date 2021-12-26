@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButton
 import com.main.app.R
+import com.main.app.practice.PracticeModeActivity
 
 
 class PracticeModeFragment1 : Fragment() {
@@ -41,14 +41,11 @@ class PracticeModeFragment1 : Fragment() {
         }
 
         createGameBtn.setOnClickListener {
-            showPracticeModeInstructions()
+            PracticeModeActivity().changeFragment(InstructionFragment())
         }
 
         return view
     }
 
-    private fun showPracticeModeInstructions() {
-        TODO("Not yet implemented")
-    }
 
 }

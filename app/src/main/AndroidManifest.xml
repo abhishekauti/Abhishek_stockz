@@ -13,11 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MainApplicationCK">
         <activity android:name=".practice.PracticeModeActivity"></activity>
-        <activity
-            android:name=".Leagues"
-            android:exported="true"
-            android:label="@string/title_activity_leagues"
-            android:theme="@style/Theme.MainApplicationCK.NoActionBar"/>
+
         <activity android:name=".Home" />
         <activity android:name=".splashscreen.LoginActivity"/>
 

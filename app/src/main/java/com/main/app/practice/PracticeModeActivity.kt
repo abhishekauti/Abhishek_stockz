@@ -20,9 +20,8 @@ class PracticeModeActivity : AppCompatActivity() {
 
     }
 
-    private fun changeFragment(fragment: Fragment) {
+    fun changeFragment(fragment: Fragment) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container_home,fragment)
-            .commit()
+        fragmentTransaction.replace(R.id.fragment_container_home,fragment).commit()
     }
 }

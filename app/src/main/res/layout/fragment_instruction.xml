@@ -6,40 +6,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.InstructionFragment">
+    tools:context=".fragments.practicemode.InstructionFragment">
 
     <!--toolbar-->
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbaar_instuctions"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/header_gradient"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+<!--    <com.google.android.material.appbar.MaterialToolbar-->
+<!--        android:id="@+id/toolbaar_instuctions"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:background="@drawable/header_gradient"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
+<!--        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal">-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:text="League | Classic"
-                android:textStyle="bold"
-                android:textSize="32sp"
-                android:textColor="#ffffff"
-                android:gravity="center"
-                android:layout_weight="0.8"/>
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text="League | Classic"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="32sp"-->
+<!--                android:textColor="#ffffff"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_weight="0.8"/>-->
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="0.1"
-                android:layout_height="match_parent"
-                android:src="@drawable/dots"
-                />
-        </LinearLayout>
-    </com.google.android.material.appbar.MaterialToolbar>
+<!--            <ImageView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="0.1"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/dots"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+<!--    </com.google.android.material.appbar.MaterialToolbar>-->
 
 <!--    Instruction Box-->
     <FrameLayout
