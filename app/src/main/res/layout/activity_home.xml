@@ -4,24 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#222157"
+    android:background="#D4D3EA"
     tools:context=".Home">
 
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/my_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@drawable/header_gradient"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
+                android:id="@+id/my_toolbar"
+                android:orientation="horizontal"
+                android:weightSum="3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
@@ -29,8 +20,9 @@
 
                 <ImageView
                     android:id="@+id/imageView5"
-                    android:layout_width="151dp"
+                    android:layout_width="match_parent"
                     android:layout_height="87dp"
+                    android:layout_weight="1"
                     android:src="@drawable/diamond_header"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -38,26 +30,27 @@
 
                 <ImageView
                     android:id="@+id/imageView4"
-                    android:layout_width="151dp"
+                    android:layout_width="match_parent"
                     android:layout_height="87dp"
+                    android:layout_weight="1"
                     android:src="@drawable/diamond_header"
                     app:layout_constraintEnd_toStartOf="@+id/imageView5"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:layout_width="151dp"
+                    android:layout_width="match_parent"
                     android:layout_height="87dp"
+                    android:layout_weight="1"
                     android:src="@drawable/diamond_header"
                     app:layout_constraintEnd_toStartOf="@+id/imageView4"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
 
 
 
-        </com.google.android.material.appbar.MaterialToolbar>
 
 
     <androidx.fragment.app.FragmentContainerView
@@ -73,12 +66,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
         app:menu="@menu/bottom_nav_menu">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>

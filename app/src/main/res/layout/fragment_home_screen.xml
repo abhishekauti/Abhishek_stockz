@@ -1,21 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/active1"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:paddingTop="50sp"
+    android:gravity="center_horizontal"
+    android:background="@color/white"
     tools:context=".fragments.homeFragments.HomeScreen">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        android:text="Select Your Game..!" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/practice_mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Practice Mode"/>
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/aclonica"
+        android:padding="10dp"
+        android:backgroundTint="@color/active3"
+        android:text="Practice Session"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"
+        android:textStyle="bold" />
 
-</FrameLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/friendly_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/aclonica"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/active3"
+        android:text="Friendly Games"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/open_mode"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/aclonica"
+        android:padding="10dp"
+        android:backgroundTint="@color/active3"
+        android:text="Open Leagues"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Pay"/>
+
+    <Button
+        android:id="@+id/btn_payment_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment History"
+        android:layout_gravity="center_horizontal"
+       />
+
+    <Button
+        android:id="@+id/btn_pm_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Practice Mode Screens"
+       />
+
+</LinearLayout>

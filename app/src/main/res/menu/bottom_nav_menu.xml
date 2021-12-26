@@ -3,24 +3,25 @@
 
     <item
         android:id="@+id/home_btn"
-        android:icon="@drawable/cartoon"
+        android:icon="@drawable/smoke"
         android:title="Home"/>
 
 
     <item
-        android:title="Portfolio"
-        android:icon="@drawable/cartoon"
+        android:title="LeaderBoards"
+        android:id="@+id/leaderboard_btn"
+        android:icon="@drawable/dots"
+        />
+
+    <item
+        android:title="Shop"
+        android:icon="@drawable/flower"
         android:id="@+id/portfolio_btn"/>
 
     <item
-        android:title="LeaderBoard"
-        android:id="@+id/leaderboard_btn"
-        android:icon="@drawable/cartoon"
-        />
-    <item
-        android:title="Settings"
+        android:title="User Profile"
         android:id="@+id/settings_btn"
-        android:icon="@drawable/cartoon"
+        android:icon="@drawable/cloud"
         />
 
 <!--    <item-->

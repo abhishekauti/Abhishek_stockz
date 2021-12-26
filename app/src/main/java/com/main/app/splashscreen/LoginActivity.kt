@@ -1,16 +1,8 @@
 package com.main.app.splashscreen
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.main.app.Home
-import com.main.app.IntroManager
 import com.main.app.R
-import com.main.app.databinding.ActivityLoginBinding
 import com.main.app.fragments.NicknameFragment
 import com.main.app.fragments.StartgameFragment
 import com.main.app.utils.FragmentCommunicator
@@ -23,7 +15,7 @@ class LoginActivity : AppCompatActivity(), FragmentCommunicator {
         super.onCreate(savedInstanceState)
 
 //        val introManager: IntroManager = IntroManager(this)
-//
+
 ////        not opening application for first time
 //        if (introManager.checkFirst()!=true) {
 //            introManager.setFirst(false)

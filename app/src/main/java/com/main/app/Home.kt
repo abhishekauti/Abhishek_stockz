@@ -1,10 +1,7 @@
 package com.main.app
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.main.app.fragments.homeFragments.HomeScreen
@@ -12,12 +9,15 @@ import com.main.app.fragments.homeFragments.LeaderBoardScreen
 import com.main.app.fragments.homeFragments.PortfolioScreen
 import com.main.app.fragments.homeFragments.SettingsScreen
 
-class Home : AppCompatActivity() {
+class Home : AppCompatActivity()
+//    ,PaymentResultListener
+{
+//    private lateinit var dao: PaymentDao
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         //hello
-        setSupportActionBar(findViewById(R.id.my_toolbar))
+//        setSupportActionBar(findViewById(R.id.my_toolbar))
 
 
 
@@ -30,6 +30,8 @@ class Home : AppCompatActivity() {
 
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragment_container_home,fragmentHomeScreen).commit()
+
+       //dao = MainDatabase.getDatabase(applicationContext).getPaymentDao()
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView.setOnItemSelectedListener {
@@ -65,4 +67,15 @@ class Home : AppCompatActivity() {
         fragmentTransaction.replace(R.id.fragment_container_home,fragment)
             .commit()
     }
+
+//    override fun onPaymentSuccess(p0: String?) {
+//        Log.d("Suraj","Payment Successful : "+p0)
+////        dao.insert(Payment(p0.toString()))
+////        Log.d("Suraj",dao.getAllPayments().toString())
+//        //Toast.makeText(this,, Toast.LENGTH_LONG).show()
+//    }
+//    override fun onPaymentError(p0: Int, p1: String?) {
+//        Log.d("Suraj","Payment Successful : "+p1)
+//        //Toast.makeText(this,"Payment UnSuccessful"+p1, Toast.LENGTH_LONG).show()
+//    }
 }

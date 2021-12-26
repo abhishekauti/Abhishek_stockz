@@ -1,16 +1,12 @@
 package com.main.app
 
-import android.app.ActionBar
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.main.app.fragments.FragmentLoading
 import com.main.app.fragments.SplashFragment
-import com.main.app.splashscreen.LoginActivity
 import com.main.app.utils.FragmentCommunicator
-import kotlinx.coroutines.*
 
 
 class MainActivity : AppCompatActivity(), FragmentCommunicator {
@@ -20,17 +16,6 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
     private val loadingFragment = FragmentLoading()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-//        val introManager: IntroManager = IntroManager(this)
-//
-////        not opening application for first time
-//        if (introManager.checkFirst()!=true) {
-//            introManager.setFirst(false)
-//            val intent : Intent = Intent(this, LoginActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//
-//        }
 
         setContentView(R.layout.activity_main)
 
@@ -58,6 +43,7 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
 
     override fun gotoStartGameFragment(name: String) {
     }
+
 
 
 }
