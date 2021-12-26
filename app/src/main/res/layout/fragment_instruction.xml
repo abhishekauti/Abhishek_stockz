@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:padding="10dp"
-                android:text="@string/demo_intro"/>
+                android:text="Instruction"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"

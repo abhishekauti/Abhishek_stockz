@@ -22,4 +22,9 @@
     <style name="Theme.MainApplicationCK.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.MainApplicationCK.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/active2</item>
+        <item name="colorPrimaryDark">@color/graylight</item>
+    </style>
 </resources>

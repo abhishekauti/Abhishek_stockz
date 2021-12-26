@@ -1,33 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/drawable/header_gradient.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/drawable/ic_diamonddiamond.xml" value="0.14375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/drawable/ic_timer.xml" value="0.14375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.146484375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_leader_board_fragment.xml" value="0.119921875" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_leaderboard.xml" value="0.131640625" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_leagues.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_leagues.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_login.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_position.xml" value="0.131640625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_profile.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/content_position.xml" value="0.131640625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/content_scrolling.xml" value="0.109375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/dialog_custom.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/dropdown_item.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_first2.xml" value="0.131640625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_home_screen.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_instruction.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_leader_board_screen.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_loading.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_nickname.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_portfolio_screen.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_second2.xml" value="0.131640625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_settings_screen.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_splash.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_startgame.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/leaderboardfragment.xml" value="0.131640625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/list_item.xml" value="0.131640625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/portfoliofragment.xml" value="0.131640625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/menu/action_bar_items.xml" value="0.131640625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/menu/bottom_nav_menu.xml" value="0.131640625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/menu/menu_leagues.xml" value="0.109375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/menu/position_nav_menu.xml" value="0.131640625" />
       </map>
     </option>
   </component>
