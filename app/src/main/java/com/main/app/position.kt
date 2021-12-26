@@ -17,6 +17,8 @@ class position : AppCompatActivity() {
         return true
     }
 
+    //functions
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.nav_timer -> {Toast.makeText(this,"Timer Selected",Toast.LENGTH_SHORT).show()
