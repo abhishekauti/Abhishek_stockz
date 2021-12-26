@@ -8,17 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MainApplicationCK">
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity
-            android:name=".test"
-            android:exported="false"
-            android:label="@string/title_activity_test"
-            android:theme="@style/Theme.MainApplicationCK.NoActionBar" />
-        <activity
-            android:name=".Leagues"
-            android:exported="true"
-            android:label="@string/title_activity_leagues"
-            android:theme="@style/Theme.MainApplicationCK.NoActionBar">
+            android:name=".position"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,11 +20,18 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Leagues"
+            android:exported="false"
+            android:label="@string/title_activity_leagues"
+            android:theme="@style/Theme.MainApplicationCK.NoActionBar">
+
+        </activity>
+        <activity
             android:name=".leaderBoardFragment"
             android:exported="false" />
         <activity
             android:name=".Leaderboard"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Profile"
             android:exported="false" />

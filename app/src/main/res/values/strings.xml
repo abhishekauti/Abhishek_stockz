@@ -124,10 +124,10 @@
     </string-array>
 
     <string-array name="timeframe">
-        <item>Type1</item>
-        <item>Type2</item>
-        <item>Type3</item>
-        <item>Type4</item>
+        <item>2 min</item>
+        <item>5 min</item>
+        <item>7 min</item>
+        <item>10 min</item>
     </string-array>
 
     <string-array name="EntryFees">
@@ -159,6 +159,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_position">Position</string>
 
 
 </resources>
