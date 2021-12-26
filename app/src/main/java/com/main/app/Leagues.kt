@@ -30,7 +30,7 @@ class Leagues : AppCompatActivity() {
         val entryview=findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView4)
         val tournamentview=findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView5)
         val visibilityview=findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView6)
-        val createGame=findViewById<Button>(R.id.createGame)
+        //val createGame=findViewById<Button>(R.id.createGame)
 
 
         var arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, timeFrame)
@@ -52,15 +52,15 @@ class Leagues : AppCompatActivity() {
         val temp=value.split(" ").toTypedArray()
         val time=temp[0]
 
-        createGame.setOnClickListener {
-            val intent = Intent(this, position::class.java)
-        }
+//        createGame.setOnClickListener {
+//            val intent = Intent(this, position::class.java)
+//        }
 
 
     }
-    fun showAlertDialog(view: View){
-        CustomDialog().show(supportFragmentManager,"dialog cc")
-
-
-    }
+//    fun showAlertDialog(view: View){
+//        CustomDialog().show(supportFragmentManager,"dialog cc")
+//
+//
+//    }
 }
