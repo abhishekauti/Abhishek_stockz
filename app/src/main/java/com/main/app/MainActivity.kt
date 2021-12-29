@@ -6,10 +6,9 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.main.app.fragments.FragmentLoading
 import com.main.app.fragments.SplashFragment
-import com.main.app.utils.FragmentCommunicator
 
 
-class MainActivity : AppCompatActivity(), FragmentCommunicator {
+class MainActivity : AppCompatActivity() {
 
 
     private val splashFragment = SplashFragment()
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                this.gotoLoadingFragment()
                 gotoLoadingFragment()
             },
             1000 // value in milliseconds
@@ -35,14 +33,12 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
 
 
 
-    override fun gotoLoadingFragment() {
+    fun gotoLoadingFragment() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_containermain, loadingFragment)
             .commit()
     }
 
-    override fun gotoStartGameFragment(name: String) {
-    }
 
 
 

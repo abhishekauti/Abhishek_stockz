@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
+import com.example.flatdialoglibrary.dialog.FlatDialog
 import com.google.android.material.button.MaterialButton
 import com.main.app.R
 import com.main.app.practice.PracticeModeActivity
+import com.main.app.utils.FragmentCommunicator
 
 
 class PracticeModeFragment1 : Fragment() {
@@ -35,16 +37,27 @@ class PracticeModeFragment1 : Fragment() {
         infoBtnGamePlay = view.findViewById(R.id.infoBtnGameType)
 
 //        val alertDialog  = AlertDialog.Builder(this)
-
         infoBtnGamePlay.setOnClickListener {
-//TODO Show Dialog
+            val msg = "CLicked on Info Btn Game Play"
+            val title = "READ ME"
+
+            showMsg(title,msg)
+
         }
 
         createGameBtn.setOnClickListener {
-            PracticeModeActivity().changeFragment(InstructionFragment())
+            val fragmentCommunicator = activity as FragmentCommunicator
+            fragmentCommunicator.gotoInstructionFragment()
         }
 
         return view
+    }
+
+    fun showMsg(title: String,msg : String){
+       val flatDialog = FlatDialog(PracticeModeActivity())
+        flatDialog.setTitle(title)
+            .setSubtitle(msg)
+            .show()
     }
 
 

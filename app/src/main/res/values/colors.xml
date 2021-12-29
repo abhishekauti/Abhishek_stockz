@@ -6,6 +6,7 @@
     <color name="screen1">#C13584</color>
     <color name="active1">#833AB4</color>
     <color name="inactive1">#9C833AB4</color>
+    <color name="ck_logo_back">#FFF9F8</color>
 
     <color name="screen2">#E1306C</color>
     <color name="active2">#FD1D1D</color>

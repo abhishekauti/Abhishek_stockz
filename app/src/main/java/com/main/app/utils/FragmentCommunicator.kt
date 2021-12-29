@@ -1,6 +1,8 @@
 package com.main.app.utils
 
 interface FragmentCommunicator {
-    fun gotoLoadingFragment()
+
+    //in loginactivity
     fun gotoStartGameFragment(name : String)
+    fun gotoInstructionFragment()
 }
