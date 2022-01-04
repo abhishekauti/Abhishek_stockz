@@ -1,6 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.MainApplicationCK" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="windowNoTitle">true</item>
+
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary_color</item>
         <item name="colorPrimaryVariant">@color/royalblue</item>
@@ -24,7 +26,6 @@
     <style name="Theme.MainApplicationCK.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/active2</item>
-        <item name="colorPrimaryDark">@color/graylight</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>

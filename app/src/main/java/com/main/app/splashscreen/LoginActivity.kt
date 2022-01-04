@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity(), FragmentCommunicator {
     }
 
     override fun gotoInstructionFragment() {
-        TODO("Not yet implemented")
+        // TODO("Not yet implemented")
     }
 }
 

@@ -110,15 +110,17 @@
 
 
     <TextView
+        android:clickable="true"
+        android:id="@+id/startGameBtn"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:background="@color/black"
-        android:text="Game Start in 27 sec"
+        android:background="@color/yellow"
+        android:text="Game Starts in x sec"
         android:textColor="@color/white"
         android:gravity="center"
-        android:textStyle="italic"
+        android:textStyle="italic|bold"
         android:textSize="20sp"/>
 
 </LinearLayout>

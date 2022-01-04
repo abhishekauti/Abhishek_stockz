@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/nav_timer"
-        android:icon="@drawable/ic_timer"
-        android:title="Timer"
-        app:showAsAction="ifRoom" />
+<!--    <item-->
+<!--        android:id="@+id/nav_timer"-->
+<!--        android:icon="@drawable/ic_timer"-->
+<!--        android:title="Timer"-->
+<!--        app:showAsAction="always|withText" />-->
 
-    <item android:id="@+id/nav_diamond"
-        android:icon="@drawable/diamond"
-        android:title="Diamond"
-        app:showAsAction="ifRoom"/>
+<!--    <item android:id="@+id/nav_diamond"-->
+<!--        android:title="Diamond"-->
+<!--        android:icon="@drawable/diamond"-->
+<!--        app:showAsAction="always|withText"/>-->
 
-    <item android:id="@+id/nav_third_item"
+<!--    <item android:id="@+id/nav_level"-->
+<!--        android:icon="@drawable/diamond"-->
+<!--        android:title="Diamond"/>-->
 
-        android:title="Exit"
-        app:showAsAction="never"/>
+    <item android:id="@+id/nav_exit"
+        android:title="Exit"/>
 
 </menu>

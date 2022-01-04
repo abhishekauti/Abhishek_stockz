@@ -29,14 +29,5 @@
     <color name="endblue">#0bcce6</color>
 
     
-    <array name="active_active">
-        <item>@color/active1</item>
-        <item>@color/active2</item>
-        <item>@color/active3</item>
-    </array>
-    <array name="inactive">
-        <item>@color/inactive1</item>
-        <item>@color/inactive2</item>
-        <item>@color/inactive3</item>
-    </array>
+
 </resources>

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.main.app.fragments.FragmentLoading
 import com.main.app.fragments.SplashFragment
 
+//Start
 
 class MainActivity : AppCompatActivity() {
 
