@@ -8,6 +8,9 @@
     android:orientation="vertical"
     tools:context=".fragments.InstructionFragment">
 
+
+<!--    demo view-->
+
     <!--toolbar-->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbaar_instuctions"
