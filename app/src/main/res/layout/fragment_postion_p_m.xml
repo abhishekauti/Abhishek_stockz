@@ -12,6 +12,7 @@
         android:text="Top Movers" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gainers_recycle_view"
+        android:background="@color/lightyellow"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:orientation="horizontal"
@@ -25,6 +26,7 @@
         android:id="@+id/losers_recycle_view"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:background="@color/lightyellow"
         android:orientation="horizontal"
         />
 
