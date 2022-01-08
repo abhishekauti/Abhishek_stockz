@@ -25,6 +25,11 @@ import com.main.app.fragments.practicemode.FragmentPositionPM
 
 
 class Position : AppCompatActivity() {
+
+    companion object{
+        const val TIMER = "TIMER"
+        const val CURRENCY = "CURRENCY"
+    }
     lateinit var viewPager: ViewPager2
     lateinit var tabLayout: TabLayout
     lateinit var refreshLayout: SwipeRefreshLayout
@@ -54,6 +59,15 @@ class Position : AppCompatActivity() {
             }
         }.attach()
 
+
+        val timer = intent.getStringExtra(TIMER)
+        val currency = intent.getStringExtra(CURRENCY)
+
+        val timerText = findViewById<TextView>(R.id.timer);
+        val currencyText = findViewById<TextView>(R.id.currency);
+
+        timerText.text = timer
+        currencyText.text = currency
 
         refreshLayout.setOnRefreshListener {
             // Reloading the data
