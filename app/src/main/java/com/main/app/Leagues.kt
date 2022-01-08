@@ -1,14 +1,13 @@
 package com.main.app
 
-import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.icu.text.Transliterator
 import android.os.Bundle
-import android.view.View
-import android.widget.*
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import android.widget.AdapterView.OnItemClickListener
-
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.main.app.practice.Position
 
 class Leagues : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,12 +29,13 @@ class Leagues : AppCompatActivity() {
         val entryview=findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView4)
         val tournamentview=findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView5)
         val visibilityview=findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView6)
-        //val createGame=findViewById<Button>(R.id.createGame)
+        val createGame=findViewById<Button>(R.id.createGame)
 
         //adapter added
         var arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, timeFrame)
+        var arrayAdapterTime = ArrayAdapter(this, R.layout.dropdown_item ,gameplay)
 
-        gameview.setAdapter(arrayAdapter)
+        gameview.setAdapter(arrayAdapterTime)
         marketview.setAdapter(arrayAdapter)
         timeview.setAdapter(arrayAdapter)
         entryview.setAdapter(arrayAdapter)
@@ -49,12 +49,27 @@ class Leagues : AppCompatActivity() {
             }
             // Toast.makeText(this@Leagues , "Item ", Toast.LENGTH_SHORT).show()
         }
-        val temp=value.split(" ").toTypedArray()
+        var temp=value.split(" ").toTypedArray()
         val time=temp[0]
 
-//        createGame.setOnClickListener {
-//            val intent = Intent(this, position::class.java)
-//        }
+        var gameVal:String=""
+        gameview.setOnItemClickListener { parent, view, position, id ->
+            val selectedvalue = arrayAdapterTime.getItem(position)
+            if(selectedvalue != null){
+                gameVal=selectedvalue
+            }
+        }
+        temp = value.split("").toTypedArray()
+        val diamonds = temp[0]
+
+
+        createGame.setOnClickListener {
+            val intent = Intent(this@Leagues , Position::class.java )
+            intent.putExtra(Position.TIMER , time)
+            intent.putExtra(Position.CURRENCY , diamonds)
+
+            startActivity(intent)
+        }
 
 
     }

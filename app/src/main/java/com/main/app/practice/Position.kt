@@ -3,6 +3,7 @@ package com.main.app.practice
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -18,6 +19,11 @@ import com.main.app.fragments.practicemode.FragmentPositionPM
 
 
 class Position : AppCompatActivity() {
+
+    companion object{
+        const val TIMER = "TIMER"
+        const val CURRENCY = "CURRENCY"
+    }
     lateinit var viewPager: ViewPager2
     lateinit var tabLayout: TabLayout
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +46,15 @@ class Position : AppCompatActivity() {
             0 -> tab.text = "Position"
             1 -> tab.text = "Portfolio"
         }}.attach()
+
+        val timer = intent.getStringExtra(TIMER)
+        val currency = intent.getStringExtra(CURRENCY)
+
+        val timerText = findViewById<TextView>(R.id.timer);
+        val currencyText = findViewById<TextView>(R.id.currency);
+
+        timerText.text = timer
+        currencyText.text = currency
 
 
 

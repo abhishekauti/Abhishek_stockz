@@ -110,10 +110,10 @@
     <string name="action_settings">Settings</string>
 
     <string-array name="gameplay">
-        <item>Type1</item>
-        <item>Type2</item>
-        <item>Type3</item>
-        <item>Type4</item>
+        <item>25 diamonds</item>
+        <item>50 diamonds</item>
+        <item>75 diamonds</item>
+        <item>100 diamonds</item>
     </string-array>
 
     <string-array name="marketplace">

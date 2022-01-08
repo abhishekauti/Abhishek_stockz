@@ -170,5 +170,11 @@
         </LinearLayout>
     </ScrollView>
 
+    <Button
+        android:id="@+id/createGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
