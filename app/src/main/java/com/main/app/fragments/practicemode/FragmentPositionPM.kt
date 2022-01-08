@@ -3,6 +3,7 @@ package com.main.app.fragments.practicemode
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,13 +18,15 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.main.app.Common
+import com.main.app.Communicator
 import com.main.app.R
 import org.json.JSONException
 import org.json.JSONObject
 import java.util.*
 import kotlin.collections.ArrayList
 
-class FragmentPositionPM : Fragment() {
+class FragmentPositionPM : Fragment(),Communicator {
     class StockDataModel(
         var companyName: String,
         var close: String,
@@ -53,16 +56,8 @@ class FragmentPositionPM : Fragment() {
         gainerRecyclerView = view.findViewById(R.id.gainers_recycle_view)
         getTopGainerData(context,gainerRecyclerView)
 
+        Common.comm = this
     }
-
-
-    /*companion object{
-        var companyName: String = ""
-        var close: String = ""
-        var changes: String = ""
-
-        //end companion object
-    }*/
 
 
     fun getToploserData(context: Context?, loserRecyclerView: RecyclerView?) {
@@ -201,6 +196,12 @@ class FragmentPositionPM : Fragment() {
         requestQueue.add(jsonObjectRequest)
     }
 
+    override fun run() {
+        getTopGainerData(requireContext(),gainerRecyclerView)
+        getToploserData(requireContext(),loserRecyclerView)
+        Log.d("Demo","Done")
+    }
+
 
 }
 
@@ -230,6 +231,7 @@ class TopGainersAdapter(val context: Context?, val topgainers: ArrayList<Fragmen
             view.setOnClickListener(View.OnClickListener {
                 val position = adapterPosition
                 // start stock screen
+
 
             })
         }

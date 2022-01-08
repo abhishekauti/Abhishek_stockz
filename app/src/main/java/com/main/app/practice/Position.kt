@@ -17,6 +17,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.main.app.Common
 import com.main.app.Home
 import com.main.app.R
 import com.main.app.fragments.practicemode.FragmentPortfolioPM
@@ -56,7 +57,7 @@ class Position : AppCompatActivity() {
 
         refreshLayout.setOnRefreshListener {
             // Reloading the data
-
+            Common.comm?.run()
             refreshLayout.isRefreshing = false
         }
 
