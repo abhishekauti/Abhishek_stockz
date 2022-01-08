@@ -1,6 +1,7 @@
 package com.main.app.fragments.practicemode
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,7 @@ import com.main.app.R
 import org.json.JSONException
 import org.json.JSONObject
 import java.util.*
+import kotlin.collections.ArrayList
 
 class FragmentPositionPM : Fragment() {
     class StockDataModel(
@@ -27,8 +29,12 @@ class FragmentPositionPM : Fragment() {
         var close: String,
         var changes: String)
 
+    lateinit var mtopGainersList: ArrayList<StockDataModel>
+    lateinit var mtopLosersList: ArrayList<StockDataModel>
+
     lateinit var gainerRecyclerView: RecyclerView
     lateinit var loserRecyclerView : RecyclerView
+    var currentcontext = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,10 +56,20 @@ class FragmentPositionPM : Fragment() {
     }
 
 
-    private fun getToploserData(context: Context?, loserRecyclerView: RecyclerView?) {
-         val jsonUrl = "https://financialmodelingprep.com/api/v3/stock/losers?apikey=16f76bfbe6000fa20d62d1a9d78b53b8"
+    /*companion object{
+        var companyName: String = ""
+        var close: String = ""
+        var changes: String = ""
 
-        val toplosersList: ArrayList<StockDataModel> = ArrayList()
+        //end companion object
+    }*/
+
+
+    fun getToploserData(context: Context?, loserRecyclerView: RecyclerView?) {
+        val jsonUrl = "https://financialmodelingprep.com/api/v3/stock/losers?apikey=16f76bfbe6000fa20d62d1a9d78b53b8"
+
+        mtopLosersList = ArrayList()
+
 
 
         var requestQueue: RequestQueue = Volley.newRequestQueue(context)
@@ -69,34 +85,34 @@ class FragmentPositionPM : Fragment() {
 
                 try {
                     val toplosers = response.getJSONArray("mostLoserStock")
-try {
+                    try {
 
-    for (i in 0 .. toplosers.length()-1) {
-        val articleObj: JSONObject = toplosers.getJSONObject(i)
-        val companyName: String = articleObj.getString("companyName")
-        val close: String = articleObj.getString("price")
-        val changes: String = articleObj.getString("changes")
+                        for (i in 0 .. toplosers.length()-1) {
+                            val articleObj: JSONObject = toplosers.getJSONObject(i)
+                            val companyName: String = articleObj.getString("companyName")
+                            val close: String = articleObj.getString("price")
+                            val changes: String = articleObj.getString("changes")
 //                        val chart: String = articleObj.getString("chart")
 
-        val stockdata = StockDataModel(companyName, close, changes)
+                            val stockdata = StockDataModel(companyName, close, changes)
 
-        stockdata.companyName = companyName
-        stockdata.close = close
-        stockdata.changes = changes
+                            stockdata.companyName = companyName
+                            stockdata.close = close
+                            stockdata.changes = changes
 
-        toplosersList.add(stockdata)
+                            mtopLosersList.add(stockdata)
 
-    }
-}
-catch (e : Exception){
-    e.printStackTrace()
-}
+                        }
+                    }
+                    catch (e : Exception){
+                        e.printStackTrace()
+                    }
 
                     if (loserRecyclerView != null) {
                         loserRecyclerView.layoutManager =
                             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                     }
-                    val toplosersAdapter: TopLosersAdapter = TopLosersAdapter(context, toplosersList)
+                    val toplosersAdapter: TopLosersAdapter = TopLosersAdapter(context, mtopLosersList)
                     if (loserRecyclerView != null) {
                         loserRecyclerView.adapter = toplosersAdapter
                     }
@@ -118,10 +134,10 @@ catch (e : Exception){
 
     }
 
-    private fun getTopGainerData(context: Context?, gainerRecyclerView: RecyclerView?) {
-         val jsonUrl = "https://financialmodelingprep.com/api/v3/stock/gainers?apikey=16f76bfbe6000fa20d62d1a9d78b53b8"
+    fun getTopGainerData(context: Context?, gainerRecyclerView: RecyclerView?) {
+        val jsonUrl = "https://financialmodelingprep.com/api/v3/stock/gainers?apikey=16f76bfbe6000fa20d62d1a9d78b53b8"
 
-        val topGainersList: ArrayList<StockDataModel> = ArrayList()
+        mtopGainersList = ArrayList()
 
         var requestQueue: RequestQueue = Volley.newRequestQueue(context)
 
@@ -149,7 +165,7 @@ catch (e : Exception){
                             stockdata.close = close
                             stockdata.changes = changes
 
-                            topGainersList.add(stockdata)
+                            mtopGainersList.add(stockdata)
 
                         }
 
@@ -159,7 +175,7 @@ catch (e : Exception){
                     }
 
 
-                    val topGainersAdapter: TopGainersAdapter = TopGainersAdapter(context, topGainersList)
+                    val topGainersAdapter: TopGainersAdapter = TopGainersAdapter(context, mtopGainersList)
 
                     if (gainerRecyclerView != null) {
                         gainerRecyclerView.layoutManager =
@@ -183,7 +199,6 @@ catch (e : Exception){
 
 
         requestQueue.add(jsonObjectRequest)
-
     }
 
 
@@ -210,6 +225,14 @@ class TopGainersAdapter(val context: Context?, val topgainers: ArrayList<Fragmen
         val close: TextView = view.findViewById(R.id.stock_closingvalue)
         val changes: TextView = view.findViewById(R.id.stock_changevalue)
         val chart: ImageView = view.findViewById(R.id.stock_chart)
+
+        init{
+            view.setOnClickListener(View.OnClickListener {
+                val position = adapterPosition
+                // start stock screen
+
+            })
+        }
 
     }
 
@@ -251,6 +274,14 @@ class TopLosersAdapter(val context: Context?, val toplosers: ArrayList<FragmentP
         val changes: TextView = view.findViewById(R.id.stock_changevalue)
         val chart: ImageView = view.findViewById(R.id.stock_chart)
 
+        init{
+            view.setOnClickListener(View.OnClickListener {
+                val position = adapterPosition
+                // start stock screen
+
+            })
+        }
+
 
     }
 
@@ -261,6 +292,7 @@ class TopLosersAdapter(val context: Context?, val toplosers: ArrayList<FragmentP
         holder.companyName.text = item.companyName
         holder.close.text = item.close
         holder.changes.text = item.changes
+
 
     }
 
