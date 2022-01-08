@@ -40,6 +40,7 @@
 
                 <TextView
                     android:id="@+id/timer"
+                    android:id="@+id/pm_timer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -109,11 +110,23 @@
 <!--        tabs added through code -->
     </com.google.android.material.tabs.TabLayout>
 
-<androidx.viewpager2.widget.ViewPager2
-    android:id="@+id/pmViewPager"
-    android:orientation="horizontal"
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/pm_referesh_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pmViewPager"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 
 
 </LinearLayout>
