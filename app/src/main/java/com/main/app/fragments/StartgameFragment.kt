@@ -2,13 +2,13 @@ package com.main.app.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.fragment.app.Fragment
 import com.main.app.Home
 import com.main.app.R
+import pl.droidsonroids.gif.GifImageButton
 
 
 class StartgameFragment : Fragment() {
@@ -28,7 +28,7 @@ class StartgameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val playBtn = view.findViewById<Button>(R.id.playBtn)
+        val playBtn = view.findViewById<GifImageButton>(R.id.playBtn)
         playBtn.setOnClickListener {
             val intent = Intent(activity,Home::class.java)
             startActivity(intent)

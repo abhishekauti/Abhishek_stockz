@@ -1,13 +1,12 @@
 package com.main.app
 
 import android.content.Intent
-import android.icu.text.Transliterator
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.main.app.practice.Position
+import com.main.app.practice.PMGameActivity
 
 class Leagues : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,9 +63,9 @@ class Leagues : AppCompatActivity() {
 
 
         createGame.setOnClickListener {
-            val intent = Intent(this@Leagues , Position::class.java )
-            intent.putExtra(Position.TIMER , time)
-            intent.putExtra(Position.CURRENCY , diamonds)
+            val intent = Intent(this@Leagues , PMGameActivity::class.java )
+            intent.putExtra(PMGameActivity.TIMER , time)
+            intent.putExtra(PMGameActivity.CURRENCY , diamonds)
 
             startActivity(intent)
         }

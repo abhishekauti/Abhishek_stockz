@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".practice.Position">
+    tools:context=".practice.PMGameActivity">
 
 
 
@@ -40,7 +40,6 @@
 
                 <TextView
                     android:id="@+id/timer"
-                    android:id="@+id/pm_timer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -100,31 +99,15 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/pmTabLayout"
-        android:background="@color/graylight"
+
+    <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
-        app:tabTextColor="@color/startblue"
-        app:tabSelectedTextColor="@color/inactive2"
-        android:layout_height="wrap_content">
-<!--        tabs added through code -->
-    </com.google.android.material.tabs.TabLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/pmgameactivity_fragment_container"/>
 
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/pm_referesh_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/pmViewPager"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 

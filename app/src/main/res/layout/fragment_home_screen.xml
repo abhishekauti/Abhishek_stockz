@@ -7,10 +7,9 @@
     android:layout_gravity="center"
     android:paddingTop="50sp"
     android:gravity="center_horizontal"
-    android:background="@color/white"
     tools:context=".fragments.homeFragments.HomeScreen">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,22 +17,36 @@
         android:textColor="@color/black"
         android:textSize="30sp"
         android:gravity="center_horizontal"
-        android:text="Select Your Game..!" />
+        android:text="Select A Game..!" />
 
-    <com.google.android.material.button.MaterialButton
+    <LinearLayout
         android:id="@+id/practice_mode"
+        android:clickable="true"
+        android:background="@color/active3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true">
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/practice"/>
+
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/aclonica"
         android:padding="10dp"
-        android:backgroundTint="@color/active3"
+        android:background ="@color/active3"
         android:text="Practice Session"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:layout_margin="20dp"
         android:textStyle="bold" />
-
+    </LinearLayout>
     <com.google.android.material.button.MaterialButton
         android:id="@+id/friendly_mode"
         android:layout_width="wrap_content"
@@ -62,6 +75,11 @@
         android:textColor="@color/white"
         android:textStyle="bold" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        >
     <Button
         android:id="@+id/payment"
         android:layout_width="wrap_content"
@@ -83,5 +101,6 @@
         android:layout_height="wrap_content"
         android:text="Practice Mode Screens"
        />
+    </LinearLayout>
 
 </LinearLayout>

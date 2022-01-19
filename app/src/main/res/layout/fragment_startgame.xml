@@ -4,43 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#222157"
+    android:background="#FFFFFF"
+    android:layout_gravity="center_horizontal"
     tools:context=".fragments.StartgameFragment">
 
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="164dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="168dp"
-        android:src="@drawable/cloudsm"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="105dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="48dp"
-        android:src="@drawable/cloudsm"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="128dp"
-        android:layout_height="82dp"
-        android:layout_marginTop="484dp"
-        android:src="@drawable/cloudsm"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.961"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="#32a0da"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="Before we begin \nhere are some gifts for you.!"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="83dp"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:layout_width="283dp"
@@ -85,7 +66,7 @@
             android:padding="30dp"
             android:text="100"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="22sp" />
 
         <TextView
@@ -95,23 +76,19 @@
             android:padding="30dp"
             android:textStyle="bold"
             android:text="10,00,000"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="22sp" />
 
 
     </LinearLayout>
 
-    <Button
+    <pl.droidsonroids.gif.GifImageButton
         android:id="@+id/playBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
         android:layout_marginBottom="76dp"
-        android:backgroundTint="#ADC6FF"
-        android:padding="10dp"
-        android:text="START GAME"
-        android:textColor="#222157"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:src="@drawable/start_game"
+        android:elevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

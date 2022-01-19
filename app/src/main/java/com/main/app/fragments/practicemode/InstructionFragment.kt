@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.main.app.R
-import com.main.app.practice.Position
+import com.main.app.practice.PMGameActivity
 
 class InstructionFragment : Fragment() {
 
@@ -34,14 +34,14 @@ class InstructionFragment : Fragment() {
             }
 
             override fun onFinish() {
-                val intent = Intent(activity, Position::class.java)
+                val intent = Intent(activity, PMGameActivity::class.java)
                 startActivity(intent)
                 activity?.finish()
             }
         }.start()
 
         startGameBtn.setOnClickListener {
-            val intent = Intent(activity, Position::class.java)
+            val intent = Intent(activity, PMGameActivity::class.java)
             startActivity(intent)
             activity?.finish()
         }

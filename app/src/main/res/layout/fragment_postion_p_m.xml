@@ -1,33 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.practicemode.FragmentPositionPM"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Top Movers" />
+        android:orientation="vertical">
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:queryHint="Search"
+            />
+        <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchListView"
+        android:divider="#ad5"
+        android:dividerHeight="2dp"/>
+
+
+    <TextView
+        android:textColor="#4CAF50"
+        android:fontFamily="@font/aclonica"
+
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Top Gainers" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gainers_recycle_view"
-        android:background="@color/lightyellow"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:orientation="horizontal"
         />
+        <TextView
+            android:textColor="#DF5E36"
+            android:fontFamily="@font/aclonica"
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Top Losers" />
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Top Losers" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/losers_recycle_view"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@color/lightyellow"
         android:orientation="horizontal"
         />
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

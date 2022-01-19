@@ -21,13 +21,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".practice.Position"
-            android:exported="true"></activity>
+            android:name=".practice.PMGameActivity"
+            android:exported="true" />
         <activity
             android:name=".Leagues"
             android:exported="false"
             android:label="@string/title_activity_leagues"
-            android:theme="@style/Theme.MainApplicationCK.NoActionBar"></activity>
+            android:theme="@style/Theme.MainApplicationCK.NoActionBar" />
         <activity
             android:name=".leaderBoardFragment"
             android:exported="false" />

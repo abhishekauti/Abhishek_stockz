@@ -6,14 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
-import com.google.android.material.button.MaterialButton
 import com.main.app.R
 import com.main.app.practice.PracticeModeActivity
 
 class HomeScreen : Fragment() {
 
-    lateinit var practiceMode : MaterialButton
+    lateinit var practiceMode : LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

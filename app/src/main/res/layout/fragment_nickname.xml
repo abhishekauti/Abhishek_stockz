@@ -11,6 +11,8 @@
         android:scrollbars="vertical"
         tools:context=".fragments.NicknameFragment">
 
+
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="340dp"
