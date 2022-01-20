@@ -25,12 +25,11 @@ class InstructionFragment : Fragment() {
 
 //        var duration = 20
 //        startGameBtn.text = "Game Starts in "+ duration
-        object : CountDownTimer(30000,1000) {
-            //30000 = 30second
+        val countDownTimer = object : CountDownTimer(30000,1000) {
 
             override fun onTick(millisUntilFinished: Long) {
-//                duration = (millisUntilFinished/1000).toInt()
                 startGameBtn.text = "Game Starts in " + millisUntilFinished / 1000 + " sec"
+
             }
 
             override fun onFinish() {
@@ -38,11 +37,13 @@ class InstructionFragment : Fragment() {
                 startActivity(intent)
                 activity?.finish()
             }
-        }.start()
+        }
+        countDownTimer.start()
 
         startGameBtn.setOnClickListener {
             val intent = Intent(activity, PMGameActivity::class.java)
             startActivity(intent)
+            countDownTimer.cancel()
             activity?.finish()
         }
 

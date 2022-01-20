@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.main.app.Home
 import com.main.app.R
 import com.main.app.fragments.practicemode.FragmentTabbedPM
+import kotlinx.coroutines.runBlocking
 
 
 class PMGameActivity : AppCompatActivity() {
@@ -30,20 +31,23 @@ class PMGameActivity : AppCompatActivity() {
         timer = findViewById(R.id.timer)
 
 //        //anonmyous timer for the app bar
-        object : CountDownTimer(300000,1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                val totalsec = (millisUntilFinished / 1000)
-                val min = totalsec/60
-                val sec = totalsec%60
-                timer.text = ""+ min + ":" + sec
-            }
+runBlocking {
+    object : CountDownTimer(300000,1000) {
+        override fun onTick(millisUntilFinished: Long) {
+            val totalsec = (millisUntilFinished / 1000)
+            val min = totalsec/60
+            val sec = totalsec%60
+            timer.text = ""+ min + ":" + sec
+        }
 
-            override fun onFinish() {
-                val intent = Intent(this@PMGameActivity, Home::class.java)
-                startActivity(intent)
-                finish()
-            }
-        }.start()
+        override fun onFinish() {
+            val intent = Intent(this@PMGameActivity, Home::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }.start()
+
+}
 
         this.supportFragmentManager.beginTransaction().replace(
             R.id.pmgameactivity_fragment_container,

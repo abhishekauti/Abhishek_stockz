@@ -14,10 +14,13 @@
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/activity_stock.xml" value="0.1" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_home_screen.xml" value="0.1" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_nickname.xml" value="0.20416666666666666" />
+        <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_p_m_buy.xml" value="0.20416666666666666" />
+        <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_p_m_sell.xml" value="0.19010416666666666" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_postion_p_m.xml" value="0.18" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_startgame.xml" value="0.20416666666666666" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_stock.xml" value="0.20416666666666666" />
+        <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_stock_detail.xml" value="0.18" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/fragment_tabbed_p_m.xml" value="0.1" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/movers_layout.xml" value="0.25" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout/toolbar.xml" value="0.20416666666666666" />

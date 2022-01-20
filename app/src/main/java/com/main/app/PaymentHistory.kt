@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.main.app.adapters.PaymentHistoryAdapter
-import com.main.app.adapters.StockListAdapter
 import com.main.app.models.Payment
 
 class PaymentHistory: AppCompatActivity() {

@@ -187,13 +187,12 @@ catch (e : Exception){
                         topGainersAdapter.setOnItemClickListener(object : TopGainersAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
                                 val bundle = Bundle()
-                                bundle.putString("VENUE_TYPE", "text")
-                                bundle.putString("CITY_NAME", "cityName")
-//                                val fragmentManager = fragmentManager
-//                                fragmentManager!!.beginTransaction().replace(
-//                                    R.id.fragmentContainer,
-//                                    DisplayVenuesFragment::class.java, bundle
-//                                ).addToBackStack(null).commit()
+                                val sName: String = view!!.findViewById<TextView>(R.id.stock_name).text as String
+                                bundle.putString("S_NAME", sName)
+                                Log.i("MY_LOG","Stock Name for StockDetailPage: "+sName)
+                                val fm = fragmentManager!!
+                                StockDetailFragment().arguments = bundle
+                                fm.beginTransaction().replace(R.id.pmgameactivity_fragment_container,StockDetailFragment()).addToBackStack(null).commit()
 
                             }
                         })
@@ -265,12 +264,13 @@ class TopGainersAdapter(val context: Context?, val topgainers: ArrayList<Fragmen
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        Log.i("MY_LOG","Inside viewholder above text=")
         val item = topgainers.get(position)
         holder.companyName.text = item.companyName
         holder.close.text = item.close
         holder.changes.setTextColor(Color.GREEN)
         holder.changes.text = item.changes
+        Log.i("MY_LOG", holder.companyName.text as String +" "+holder.changes.text.toString() )
+
 
     }
 
