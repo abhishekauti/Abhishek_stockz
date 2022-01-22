@@ -62,9 +62,7 @@ runBlocking {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onBackPressed() {
-        Toast.makeText(this, "To go back, Exit the Game or play the Game..!", Toast.LENGTH_LONG).show()
-    }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
@@ -80,6 +78,7 @@ runBlocking {
         }
 
     }
+
 
 }
 

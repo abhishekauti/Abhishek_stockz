@@ -35,6 +35,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="BHARTIARTL"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="25sp"
                 android:layout_weight="0.8"/>
 
@@ -52,12 +54,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="BSE"
+                android:textColor="@color/black"
                 android:textSize="20sp"/>
             <TextView
                 android:id="@+id/stockPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="707.30"
+                android:text="000.00"
+                android:textColor="@color/black"
                 android:layout_marginLeft="50dp"
                 android:textSize="20sp"/>
 

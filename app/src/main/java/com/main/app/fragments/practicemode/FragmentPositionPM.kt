@@ -68,7 +68,6 @@ class FragmentPositionPM : Fragment() {
 
         val toplosersList: ArrayList<StockDataModel> = ArrayList()
 
-
         var requestQueue: RequestQueue = Volley.newRequestQueue(context)
 
         var jsonObjectRequest = JsonObjectRequest(
@@ -113,6 +112,24 @@ catch (e : Exception){
                     if (loserRecyclerView != null) {
                         loserRecyclerView.adapter = toplosersAdapter
                     }
+                    try {
+                        toplosersAdapter.setOnItemClickListener(object : TopLosersAdapter.onItemClickListener{
+                            override fun onItemClick(position: Int) {
+                                val bundle = Bundle()
+                                val sName: String = view!!.findViewById<TextView>(R.id.stock_name).text as String
+
+                                bundle.putString("S_NAME", sName)
+                                Log.i("MY_LOG","Stock Name for StockDetailPage: "+sName)
+                                val fm = fragmentManager!!
+                                StockDetailFragment().arguments = bundle
+                                fm.beginTransaction().replace(R.id.pmgameactivity_fragment_container,StockDetailFragment()).addToBackStack(null).commit()
+
+                            }
+                        })
+                    }
+                    catch (e: Exception){
+                        Log.i("MY_LOG","Making toploser clickable")
+                    }
 
 
                 } catch (e: JSONException) {
@@ -142,7 +159,6 @@ catch (e : Exception){
             jsonUrl,
             null,
             {
-
                     response ->
 
                 try {
@@ -186,13 +202,17 @@ catch (e : Exception){
                     try {
                         topGainersAdapter.setOnItemClickListener(object : TopGainersAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
-                                val bundle = Bundle()
+                                val bundle : Bundle = Bundle()
                                 val sName: String = view!!.findViewById<TextView>(R.id.stock_name).text as String
+                                val sPrice: String = view!!.findViewById<TextView>(R.id.stock_closingvalue).text as String
                                 bundle.putString("S_NAME", sName)
+                                bundle.putString("S_PRICE", sPrice)
                                 Log.i("MY_LOG","Stock Name for StockDetailPage: "+sName)
-                                val fm = fragmentManager!!
+                                var fm = fragmentManager
                                 StockDetailFragment().arguments = bundle
-                                fm.beginTransaction().replace(R.id.pmgameactivity_fragment_container,StockDetailFragment()).addToBackStack(null).commit()
+                                if (fm != null) {
+                                    fm.beginTransaction().replace(R.id.pmgameactivity_fragment_container,StockDetailFragment::class.java,bundle).addToBackStack(null).commit()
+                                }
 
                             }
                         })
@@ -283,26 +303,37 @@ class TopGainersAdapter(val context: Context?, val topgainers: ArrayList<Fragmen
 
 class TopLosersAdapter(val context: Context?, val toplosers: ArrayList<FragmentPositionPM.StockDataModel>) : RecyclerView.Adapter<TopLosersAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(
-        viewGroup: ViewGroup,
-        viewType: Int
-    ): ViewHolder {
+    private lateinit var mListener: onItemClickListener
+
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
+
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(
             R.layout.movers_layout,
             viewGroup,
             false
         )
-        return ViewHolder(view)
+        return ViewHolder(view,mListener)
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View, listener: onItemClickListener) : RecyclerView.ViewHolder(view) {
         // Holds the TextView that will add each item to
         val companyName: TextView = view.findViewById(R.id.stock_name)
         val close: TextView = view.findViewById(R.id.stock_closingvalue)
         val changes: TextView = view.findViewById(R.id.stock_changevalue)
 
 //        val chart: ImageView = view.findViewById(R.id.stock_chart)
-
+        init {
+    view.setOnClickListener{
+        listener.onItemClick(adapterPosition)
+    }
+}
 
     }
 

@@ -90,6 +90,8 @@ dependencies {
     //payment gateway - razorpay
     implementation 'com.razorpay:checkout:1.6.12'
 
+    //library for parsing Html elements
+    implementation 'org.jsoup:jsoup:1.14.3'
 //    implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.20'

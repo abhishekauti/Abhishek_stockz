@@ -34,7 +34,9 @@
                     android:id="@+id/stockName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BHARTIARTL"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="NAME"
                     android:textSize="25sp"
                     android:layout_weight="0.8"/>
 
@@ -49,15 +51,18 @@
                 >
 
                 <TextView
+                    android:id="@+id/stockExchange"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="BSE"
+                    android:textColor="@color/black"
                     android:textSize="20sp"/>
                 <TextView
                     android:id="@+id/stockPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="707.30"
+                    android:text="000.00"
+                    android:textColor="@color/black"
                     android:layout_marginLeft="50dp"
                     android:textSize="20sp"/>
 
@@ -90,6 +95,7 @@
                 android:textStyle="bold"
                 android:text="Quantity"/>
             <EditText
+                android:id="@+id/buyQuantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
@@ -107,7 +113,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PRICE"/>
-            <EditText
+            <TextView
+                android:id="@+id/buyPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
@@ -117,6 +124,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/buyBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#DFFF00"

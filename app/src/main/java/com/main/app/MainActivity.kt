@@ -24,12 +24,12 @@ class MainActivity : AppCompatActivity() {
 
         //      show loading screen
 
-        Handler(Looper.getMainLooper()).postDelayed(
-            {
-                gotoLoadingFragment()
-            },
-            1000 // value in milliseconds
-        )
+            Handler(Looper.getMainLooper()).postDelayed(
+                {
+                    gotoLoadingFragment()
+                },
+                1000 // value in milliseconds
+            )
         }
 
 
