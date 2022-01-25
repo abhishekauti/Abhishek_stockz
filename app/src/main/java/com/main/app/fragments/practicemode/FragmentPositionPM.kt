@@ -27,7 +27,7 @@ class FragmentPositionPM : Fragment() {
         var companyName: String,
         var close: String,
         var changes: String)
-
+//Hello world
     lateinit var gainerRecyclerView: RecyclerView
     lateinit var loserRecyclerView : RecyclerView
 
