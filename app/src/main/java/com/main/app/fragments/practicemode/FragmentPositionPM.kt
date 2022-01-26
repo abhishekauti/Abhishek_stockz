@@ -91,11 +91,7 @@ class FragmentPositionPM : Fragment() {
             catch (e: Exception){
                 Log.i("MY_LOG","Making topgainer clickable")
             }
-
-//            intent = Intent(this, Secondactivity::class.java)
-//            intent.putExtra("name", selectedItem)
-//            startActivity(intent)
-
+            
         }
 
         loserRecyclerView = view.findViewById(R.id.losers_recycle_view)
@@ -266,7 +262,7 @@ catch (e : Exception){
                             val companyName: String = articleObj.getString("symbol")
                             val close: String = articleObj.getString("ltp")
                             val changes: String = articleObj.getString("netPrice")
-//                        val chart: String = articleObj.getString("chart")
+//                          val chart: String = articleObj.getString("chart")
 
                             val stockdata = StockDataModel(companyName, close, changes)
 
@@ -277,7 +273,6 @@ catch (e : Exception){
                             topGainersList.add(stockdata)
 
                         }
-
                     }
                     catch (e : Exception){
                         e.printStackTrace()

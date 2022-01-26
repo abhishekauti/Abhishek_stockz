@@ -66,7 +66,6 @@ class StockDetailFragment : Fragment() {
             fragmentManager?.beginTransaction()
                 ?.replace(R.id.pmgameactivity_fragment_container,PMSellFragment::class.java,bundle)?.addToBackStack(null)?.commit()
         }
-
         return view
     }
 

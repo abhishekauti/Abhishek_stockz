@@ -16,4 +16,17 @@ class FragmentPortfolioPM : Fragment() {
         val view = inflater.inflate(R.layout.fragment_portfolio_p_m, container, false)
         return view
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        /*
+        investedMoney.text = TODO("total currency - money used in buying stocks")
+        investedPercent.text = TODO("(invested money/100)*100 + % ")
+        balance.text = TODO("portfolio balance left")
+        stockValue.text = TODO()
+        valuePercent.text = TODO()
+        PLvalue.text = TODO("overall profit(+) or loss(-) of the stocks")
+         */
+    }
 }
