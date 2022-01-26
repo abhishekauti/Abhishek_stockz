@@ -3,13 +3,18 @@ package com.main.app.fragments.practicemode
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -18,16 +23,21 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.main.app.R
+import com.main.app.singleton.VollySingleTon
+import kotlinx.android.synthetic.main.fragment_postion_p_m.*
 import org.json.JSONException
 import org.json.JSONObject
 import java.util.*
 
 class FragmentPositionPM : Fragment() {
+
+    val list = arrayListOf<String>()
+
     class StockDataModel(
         var companyName: String,
         var close: String,
         var changes: String)
-
+//Hello world
     lateinit var gainerRecyclerView: RecyclerView
     lateinit var loserRecyclerView : RecyclerView
 
@@ -42,6 +52,52 @@ class FragmentPositionPM : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        searchView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+                showdata(s)
+
+            }
+        })
+
+        searchView.onItemClickListener = AdapterView.OnItemClickListener{
+                parent,view,position,id->
+            val selectedItem = parent.getItemAtPosition(position).toString()
+            // Display the clicked item using toast
+
+            try {
+                val bundle = Bundle()
+                val yourArray: List<String> = selectedItem.split(".")
+                bundle.putString("S_NAME", yourArray[0])
+//                Toast.makeText(activity,""+result[0], android.widget.Toast.LENGTH_SHORT).show()
+                val transaction = activity?.supportFragmentManager?.beginTransaction()
+                val fragmentTwo = StockDetailFragment()
+                fragmentTwo.arguments = bundle
+                if (transaction != null) {
+                    transaction.replace(R.id.pmgameactivity_fragment_container, fragmentTwo)
+                    transaction.addToBackStack(null)
+                    transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                    transaction.commit()
+                }
+
+            }
+            catch (e: Exception){
+                Log.i("MY_LOG","Making topgainer clickable")
+            }
+
+//            intent = Intent(this, Secondactivity::class.java)
+//            intent.putExtra("name", selectedItem)
+//            startActivity(intent)
+
+        }
+
         loserRecyclerView = view.findViewById(R.id.losers_recycle_view)
         try{
             getToploserData(context,loserRecyclerView)
@@ -59,6 +115,47 @@ class FragmentPositionPM : Fragment() {
         catch (e : Exception){
             Log.e("MY_LOG","Error in getTopgainers")
         }
+
+    }
+
+    private fun showdata(s: CharSequence?) {
+
+//        Toast.makeText(this,""+s,Toast.LENGTH_SHORT).show()
+
+        val url = "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords="+s+".BSE&apikey=2AHJHWOLLN5AMNWP"
+
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            { response ->
+
+                if ( response.getJSONArray("bestMatches").length() > 0 ){
+
+                    for (i in 0 until response.getJSONArray("bestMatches").length() ) {
+                        val luck = response.getJSONArray("bestMatches").getJSONObject(i).getString("1. symbol")
+                        list.add(luck)
+                    }
+                    val adapter =
+                        activity?.let {
+                            ArrayAdapter(
+                                it,
+                                android.R.layout.simple_list_item_1,
+                                list
+                            )
+                        }
+                    searchView.setAdapter(adapter)
+
+                }
+                else {
+                    Toast.makeText(activity,"No Data Available", android.widget.Toast.LENGTH_SHORT).show()
+                }
+
+//                textView.text = "Response: %s".format(response.toString())
+            },
+            { error ->
+                Toast.makeText(activity,""+error,Toast.LENGTH_SHORT).show()
+            }
+        )
+        activity?.let { VollySingleTon.getInstance(it).addToRequestQueue(jsonObjectRequest) }
 
     }
 
