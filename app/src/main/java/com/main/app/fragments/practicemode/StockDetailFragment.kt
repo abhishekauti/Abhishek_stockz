@@ -72,12 +72,10 @@ class StockDetailFragment : Fragment() {
     private fun setStockDetail(stockName: String?, stockPrice: String?) {
         val companyDetails = CompanyDetail()
         if (stockName != null) {
-//            var price: String = stockPrice.toString()
             Thread(
                 Runnable {
                     pricef = companyDetails.getStockPrice(stockName).toString()
                     activity?.runOnUiThread {
-
                         stockPriceTV.text = pricef
 
                     }

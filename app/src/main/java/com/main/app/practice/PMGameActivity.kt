@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.main.app.Home
 import com.main.app.R
 import com.main.app.fragments.practicemode.FragmentTabbedPM
+import kotlinx.android.synthetic.main.activity_pm_game.*
 import kotlinx.coroutines.runBlocking
 
 
@@ -29,6 +30,8 @@ class PMGameActivity : AppCompatActivity() {
         val toolbar : androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         timer = findViewById(R.id.timer)
+
+        currency.text = getCurrency()
 
 //        //anonmyous timer for the app bar
 runBlocking {
@@ -54,6 +57,23 @@ runBlocking {
             FragmentTabbedPM()
         ).commit()
 
+    }
+
+    fun updateCurrency(newCurrency: String?): CharSequence {
+        if (newCurrency.equals(null)){
+            return getCurrency()
+        }
+        else
+        {
+            val updatedValue : CharSequence = (Integer.parseInt(currency.text.toString())-Integer.parseInt(newCurrency)) as String
+            return updatedValue
+        }
+    }
+
+    private fun getCurrency(): CharSequence {
+//        TODO("return the value of coins present in actual portfolio of user, get the value from HomeScreen")
+
+        return "100000"
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

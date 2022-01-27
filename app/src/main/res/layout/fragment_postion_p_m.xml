@@ -43,6 +43,7 @@
         android:layout_height="250dp"
         android:orientation="horizontal"
         />
+
         <TextView
             android:textColor="#DF5E36"
             android:fontFamily="@font/aclonica"

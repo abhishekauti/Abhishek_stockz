@@ -6,7 +6,7 @@ import org.jsoup.nodes.Document
 
 class CompanyDetail {
 
-    fun getStockPrice(stockName: String) : Double {
+    fun getStockPrice(stockName: String?) : Double {
         val url = "https://www.google.com/finance/quote/"+stockName+":NSE"
         var price : Double = 0.0
         var doc : Document
