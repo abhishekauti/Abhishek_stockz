@@ -3,16 +3,15 @@ package com.main.app.fragments.practicemode
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnFocusChangeListener
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -54,6 +53,9 @@ class FragmentPositionPM : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         searchView.addTextChangedListener(object : TextWatcher {
+
+            var timer: CountDownTimer? = null
+
             override fun afterTextChanged(s: Editable?) {
             }
 
@@ -62,7 +64,14 @@ class FragmentPositionPM : Fragment() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
-                showdata(s)
+                timer?.cancel()
+
+                timer = object : CountDownTimer(1500, 1000) {
+                    override fun onTick(millisUntilFinished: Long) {}
+                    override fun onFinish() {
+                        showdata(s)
+                    }
+                }.start()
 
             }
         })
