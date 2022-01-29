@@ -1,17 +1,16 @@
 package com.main.app.fragments.practicemode
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.main.app.R
-import com.main.app.practice.PMGameActivity
 import com.main.app.utils.CompanyDetail
+import kotlinx.android.synthetic.main.activity_pm_game.*
 import kotlinx.android.synthetic.main.fragment_p_m_buy.*
 
 
@@ -20,6 +19,7 @@ class PMBuyFragment : Fragment() {
 
     private var sName: String? = ""
     private var sPrice: String? = ""
+    lateinit var stockPriceTV : TextView
     lateinit var stockNameTV : TextView
 
     override fun onCreateView(
@@ -29,6 +29,7 @@ class PMBuyFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_p_m_buy, container, false)
 
         stockNameTV = view.findViewById(R.id.stockName)
+        stockPriceTV = view.findViewById(R.id.stockPrice)
 
         sName = arguments?.getString("NAME")
         sPrice = arguments?.getString("PRICE")
@@ -48,43 +49,70 @@ class PMBuyFragment : Fragment() {
 
         setStockDetail(sName,sPrice)
 
-        var newCurrency : String? = null
+        var stockBuyAmount : String? = null
 
+        incrementBtn.setOnClickListener(
+            object : View.OnClickListener{
+                override fun onClick(v: View?) {
+                    var quantity = buyQuantity.text.toString().toInt()
+                    quantity += 1
+                    buyQuantity.text = quantity.toString()
 
-        buyQuantity.addTextChangedListener(
-            object : TextWatcher {
-                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                    Log.i("MY_LOG","Inside before text changed")
-                }
-
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    Log.i("MY_LOG","Inside on text changed")
-                }
-
-                override fun afterTextChanged(s: Editable?) {
-                    Log.i("MY_LOG","Inside after text changed")
-
-                    val price : Int = Integer.parseInt(stockPrice.text.toString())
-                    val quantity : Int = Integer.parseInt(buyQuantity.text.toString())
-                    buyPrice.text =  (price*quantity).toString()
-                    newCurrency = buyPrice.text as String
-
+                    val price  = stockPrice.text.toString().toDouble()
+                    var amount  = (price*quantity).toString()
+                    buyPrice.text =  amount
+                    stockBuyAmount = buyPrice.text.toString()
                 }
 
             }
+        )
+
+        decrementBtn.setOnClickListener(
+           object : View.OnClickListener {
+               override fun onClick(v: View?) {
+                   var quantity = buyQuantity.text.toString().toInt()
+                   quantity -= 1
+                   buyQuantity.text = quantity.toString()
+
+                   val price  = stockPrice.text.toString().toDouble()
+                   var amount  = (price*quantity).toString()
+                   buyPrice.text =  amount
+                   stockBuyAmount = buyPrice.text.toString()
+               }
+           }
         )
 
 
         buyBtn.setOnClickListener(
             object : View.OnClickListener{
                 override fun onClick(v: View?) {
-                    PMGameActivity().updateCurrency(newCurrency)
+                    stockBuyAmount = buyPrice.text.toString()
+                    updateCurrency(stockBuyAmount)
                 }
 
             }
         )
     }
 
+    private fun updateCurrency(stockBuyAmount: String?) {
+        var currencyTV = requireActivity().findViewById<TextView>(R.id.currency)
+        val currency = currencyTV.text.toString().toDouble()
+        if (stockBuyAmount!!.toDouble() < currency){
+            try {
+                val updatedValue  = currency - stockBuyAmount.toDouble()
+                requireActivity().currency.text = updatedValue.toString()
+            }
+            catch (e : Exception){
+                Log.v("MY_LOG","Exception in update currency: "+e.printStackTrace())
+            }
+
+        }
+        else{
+            Toast.makeText(context,"You don't have enough currency",Toast.LENGTH_LONG).show()
+        }
+
+
+    }
 
 
     private fun setStockDetail(sName: String?, sPrice: String?) {
@@ -103,8 +131,10 @@ class PMBuyFragment : Fragment() {
 
                         activity?.runOnUiThread {
                             stockPrice.text = pricef
-                            buyPrice.text = (Integer.parseInt(stockPrice.text.toString()) * Integer.parseInt(stockPrice.text.toString())).toString()
+                            val buyprice = (stockPrice.text.toString().toDouble())*(buyQuantity.text.toString().toDouble())
+                            buyPrice.text = buyprice.toString()
                         }
+
 
                 }
             ).start()
