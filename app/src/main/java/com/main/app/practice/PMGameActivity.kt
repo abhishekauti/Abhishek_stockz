@@ -63,18 +63,9 @@ runBlocking {
 
     }
 
-    fun updateCurrency(newCurrency: String?): CharSequence {
-        if (newCurrency.equals(null)){
-            return getCurrency()
-        }
-        else
-        {
-            val updatedValue : CharSequence = (Integer.parseInt(currency.text.toString())-Integer.parseInt(newCurrency)) as String
-            return updatedValue
-        }
-    }
 
-    private fun getCurrency(): CharSequence {
+
+    private fun getCurrency(): String {
 //        TODO("return the value of coins present in actual portfolio of user, get the value from HomeScreen")
 
         return "100000"
