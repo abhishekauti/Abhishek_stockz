@@ -105,11 +105,4 @@
         android:layout_height="wrap_content"
         android:id="@+id/pmgameactivity_fragment_container"/>
 
-
-
-
-
-
-
-
 </LinearLayout>
