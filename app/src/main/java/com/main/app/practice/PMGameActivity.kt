@@ -44,9 +44,13 @@ runBlocking {
         }
 
         override fun onFinish() {
-            val intent = Intent(this@PMGameActivity, Home::class.java)
-            startActivity(intent)
-            finish()
+//            val intent = Intent(this@PMGameActivity, Home::class.java)
+//            startActivity(intent)
+//            finish()
+            supportFragmentManager.beginTransaction().replace(
+                R.id.pmgameactivity_fragment_container,
+                GameEndScreen()
+            ).commit()
         }
     }.start()
 

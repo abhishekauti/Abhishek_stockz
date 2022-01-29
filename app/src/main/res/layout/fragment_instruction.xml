@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="2"
     tools:context=".fragments.practicemode.InstructionFragment">
 
 
@@ -49,11 +50,12 @@
         android:background="@drawable/instruction_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:layout_margin="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20dp">
 
@@ -68,48 +70,102 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="Instruction"/>
+                android:text="*Time Attack:*
+Hey Dexter!!
+Get Ready
+Your time attack is about to begin
+You have 15 mins to reach your goal
+All the best👍\n\n
+
+ *Classic:*
+Hey Dexter!!
+Good job you have set a great target for yourself
+Now, Get Ready to complete it
+All the best👍"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:orientation="horizontal">
+                android:layout_height="200dp"
+                android:weightSum="3"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="0.3"
-                    android:scaleType="centerCrop"
-                    android:layout_gravity="center"
-                    android:layout_height="50dp"
-                    android:src="@drawable/timer"
-                    android:layout_marginBottom="10dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="0.3"
-                    android:scaleType="fitCenter"
-                    android:layout_gravity="center"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/money"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="0.3"
-                    android:scaleType="centerCrop"
-                    android:layout_gravity="center"
-                    android:layout_height="50dp"
-                    android:src="@drawable/rectangle"
-                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="2"
+                    android:layout_height="match_parent">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/timer"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:text="Indicate the amount of time you have left"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="2"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/money"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Indicate the amount of ..."/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="2"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/rectangle"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Show where you rank among the other competitors"/>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-
 
         </LinearLayout>
 
 
     </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+    </LinearLayout>
 
 
     <TextView
@@ -118,7 +174,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
+        android:layout_weight="0.2"
+        android:layout_height="wrap_content"
         android:background="@color/yellow"
         android:text="Game Starts in x sec"
         android:textColor="@color/white"
