@@ -20,7 +20,7 @@
         <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/fragment_nickname.xml" value="0.25677083333333334" />
         <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/fragment_p_m_buy.xml" value="0.25677083333333334" />
         <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/fragment_p_m_sell.xml" value="0.25677083333333334" />
-        <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/fragment_portfolio_p_m.xml" value="0.25677083333333334" />
+        <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/fragment_portfolio_p_m.xml" value="0.12" />
         <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/fragment_portfolio_screen.xml" value="0.25677083333333334" />
         <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/fragment_postion_p_m.xml" value="0.25677083333333334" />
         <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/fragment_practice_mode1.xml" value="0.25677083333333334" />
@@ -32,6 +32,7 @@
         <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/item_stocks.xml" value="0.25677083333333334" />
         <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/leaderboardfragment.xml" value="0.25677083333333334" />
         <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/portfoliofragment.xml" value="0.25677083333333334" />
+        <entry key="..\:/Android/Projects/Kotlin/CK_GameOfStocks/app/src/main/res/layout/recyclershow.xml" value="0.176" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/drawable-anydpi/ic_email.xml" value="0.140625" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/drawable/splash_screen.xml" value="0.23229166666666667" />
         <entry key="..\:/Documents/AndroidStudioProjects/CK_GameOfStocks/app/src/main/res/layout-v21/fragment_startgame.xml" value="0.20416666666666666" />
