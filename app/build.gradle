@@ -49,6 +49,9 @@ android {
 
 dependencies {
 
+    implementation ('io.socket:socket.io-client:2.0.0'){
+        exclude group: 'org.json', module: 'json'
+    }
     //alphavanatage
     implementation 'com.github.crazzyghost:alphavantage-java:1.4.0'
 

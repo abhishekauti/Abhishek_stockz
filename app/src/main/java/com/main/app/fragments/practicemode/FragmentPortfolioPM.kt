@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.main.app.R
 import com.main.app.adapters.RecyclerPortfilioAdapter
@@ -34,9 +35,12 @@ class FragmentPortfolioPM : Fragment() {
             data.add(ViewClassData("name", "Item " + i))
         }
 
-        val adapter = RecyclerPortfilioAdapter(data)
+        val adapter = RecyclerPortfilioAdapter(context,data)
 
-        recyclerview.adapter=adapter
+        recyclerview.layoutManager =  LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+
+        recyclerview.adapter = adapter
 
         /*
         investedMoney.text = TODO("total currency - money used in buying stocks")

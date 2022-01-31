@@ -12,7 +12,7 @@ object SocketHandler {
     @Synchronized
     fun setSocket() {
         try {
-            mSocket = IO.socket("http://192.168.225.220:3000")
+            mSocket = IO.socket("http://192.168.100.5:3000")
         } catch (e: URISyntaxException) {
             Log.i("WHATHAPPEN",e.message.toString())
         }

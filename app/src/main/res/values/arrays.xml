@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="spinnerItems">
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
-        <item>item4</item>
+        <item>10000</item>
+        <item>20000</item>
+        <item>40000</item>
+        <item>50000</item>
+    </string-array>
+
+    <string-array name="spinnerItemstime">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
     </string-array>
 
     <string-array name="spinnerItems_gameplay">
         <item>Classic</item>
-        <item>Versus</item>
         <item>Time Attack</item>
     </string-array>
 </resources>

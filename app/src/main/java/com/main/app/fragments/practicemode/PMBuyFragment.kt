@@ -94,12 +94,16 @@ class PMBuyFragment : Fragment() {
             object : View.OnClickListener{
                 override fun onClick(v: View?) {
                     stockBuyAmount = buyPrice.text.toString()   //Total invested ammount
-
+                    sendDatatoSocket(buyQuantity.text.toString().toDouble(),buyPrice.text.toString().toDouble())
                     updateCurrency(stockBuyAmount)
                 }
 
             }
         )
+    }
+
+    private fun sendDatatoSocket(buyquantity: Double, buyprice: Double) {
+
     }
 
     private fun updateCurrency(stockBuyAmount: String?) {
