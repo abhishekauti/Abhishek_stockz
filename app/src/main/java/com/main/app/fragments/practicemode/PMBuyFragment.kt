@@ -9,14 +9,20 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.main.app.R
+import com.main.app.singleton.SocketHandler
 import com.main.app.utils.CompanyDetail
+import io.socket.client.Socket
 import kotlinx.android.synthetic.main.activity_pm_game.*
 import kotlinx.android.synthetic.main.fragment_p_m_buy.*
+import org.json.JSONObject
 
 
 class PMBuyFragment : Fragment() {
 
+    lateinit var mSocket: Socket
 
+    var quantity: Int = 0; //Total no. of quantity
+    var pricef=""   //Prise of stock
     private var sName: String? = ""
     private var sPrice: String? = ""
     lateinit var stockPriceTV : TextView
@@ -38,14 +44,16 @@ class PMBuyFragment : Fragment() {
 
         stockNameTV.text = sName
 
-
-
-
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        SocketHandler.setSocket()
+        SocketHandler.establishConnection()
+
+        mSocket = SocketHandler.getSocket()
 
         setStockDetail(sName,sPrice)
 
@@ -54,10 +62,10 @@ class PMBuyFragment : Fragment() {
         incrementBtn.setOnClickListener(
             object : View.OnClickListener{
                 override fun onClick(v: View?) {
-                    var quantity = buyQuantity.text.toString().toInt()
+                     quantity= buyQuantity.text.toString().toInt()
                     quantity += 1
                     buyQuantity.text = quantity.toString()
-
+                    Log.i("WHATTHIS","$quantity")
                     val price  = stockPrice.text.toString().toDouble()
                     var amount  = (price*quantity).toString()
                     buyPrice.text =  amount
@@ -70,10 +78,10 @@ class PMBuyFragment : Fragment() {
         decrementBtn.setOnClickListener(
            object : View.OnClickListener {
                override fun onClick(v: View?) {
-                   var quantity = buyQuantity.text.toString().toInt()
+                   quantity = buyQuantity.text.toString().toInt()
                    quantity -= 1
                    buyQuantity.text = quantity.toString()
-
+                   Log.i("WHATTHIS","$quantity")
                    val price  = stockPrice.text.toString().toDouble()
                    var amount  = (price*quantity).toString()
                    buyPrice.text =  amount
@@ -82,11 +90,11 @@ class PMBuyFragment : Fragment() {
            }
         )
 
-
         buyBtn.setOnClickListener(
             object : View.OnClickListener{
                 override fun onClick(v: View?) {
-                    stockBuyAmount = buyPrice.text.toString()
+                    stockBuyAmount = buyPrice.text.toString()   //Total invested ammount
+
                     updateCurrency(stockBuyAmount)
                 }
 
@@ -101,6 +109,17 @@ class PMBuyFragment : Fragment() {
             try {
                 val updatedValue  = currency - stockBuyAmount.toDouble()
                 requireActivity().currency.text = updatedValue.toString()
+                var totalprofit=stockBuyAmount.toDouble() - pricef.toDouble()
+                //sName stock name
+                val data = JSONObject()
+                data.put("name",sName)
+                data.put("totalprofit",totalprofit)
+                data.put("quantity",quantity)
+                data.put("avg","avg")
+                data.put("invested",stockBuyAmount.toDouble())
+                data.put("percent","%5")
+                mSocket.emit("counter",data)
+
             }
             catch (e : Exception){
                 Log.v("MY_LOG","Exception in update currency: "+e.printStackTrace())
@@ -126,7 +145,7 @@ class PMBuyFragment : Fragment() {
             Thread(
                 Runnable {
 
-                       val pricef = companyDetails.getStockPrice(sName).toString()
+                    pricef = companyDetails.getStockPrice(sName).toString()
                         Log.i("MY_LOG","showing some context error")
 
                         activity?.runOnUiThread {
