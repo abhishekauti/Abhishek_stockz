@@ -3,104 +3,186 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:paddingTop="50sp"
     android:gravity="center_horizontal"
+    android:background="@color/background"
     tools:context=".fragments.homeFragments.HomeScreen">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:gravity="center_horizontal"
-        android:text="Select A Game..!" />
 
     <LinearLayout
         android:id="@+id/practice_mode"
         android:clickable="true"
-        android:background="@color/active3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="142dp"
         android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:background="@drawable/practice_gradient"
         android:focusable="true">
 
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/practice"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/aclonica"
-        android:padding="10dp"
-        android:background ="@color/active3"
-        android:text="Practice Session"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:layout_margin="20dp"
-        android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_bold"
+                android:text="FIndividual Practice"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_margin="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lorem Ipsum"
+                android:textSize="16sp"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/raleway_semibold"
+                android:textColor="@color/white"
+                android:layout_marginStart="16dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/practice"
+            android:layout_marginStart="40dp"/>
+
+
     </LinearLayout>
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/friendly_mode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/aclonica"
-        android:padding="10dp"
-        android:layout_margin="20dp"
-        android:backgroundTint="@color/active3"
-        android:text="Friendly Games"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/open_mode"
+    <LinearLayout
+        android:id="@+id/friendly_mode"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="142dp"
+        android:orientation="horizontal"
         android:layout_margin="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/aclonica"
-        android:padding="10dp"
-        android:backgroundTint="@color/active3"
-        android:text="Open Leagues"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
+        android:background="@drawable/league_gradient"
+        android:focusable="true">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_bold"
+                android:text="Friendly Leagues"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_margin="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lorem Ipsum"
+                android:textSize="16sp"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/raleway_semibold"
+                android:textColor="@color/white"
+                android:layout_marginStart="16dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/league"
+            android:layout_marginStart="94dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/open_mode"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="142dp"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:background="@drawable/open_league_gradient"
+        android:focusable="true">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_bold"
+                android:text="Open Leagues"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_margin="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lorem Ipsum"
+                android:textSize="16sp"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/raleway_semibold"
+                android:textColor="@color/white"
+                android:layout_marginStart="16dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/open"
+            android:layout_marginStart="56dp"/>
+
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
         >
-    <Button
-        android:id="@+id/payment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Pay"/>
+        <Button
+            android:id="@+id/payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Pay"/>
 
-    <Button
-        android:id="@+id/btn_payment_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Payment History"
-        android:layout_gravity="center_horizontal"
-       />
+        <Button
+            android:id="@+id/btn_payment_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment History"
+            android:layout_gravity="center_horizontal"
+            />
 
-    <Button
-        android:id="@+id/btn_pm_screen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Practice Mode Screens"
-       />
+        <Button
+            android:id="@+id/btn_pm_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Practice Mode Screens"
+            />
     </LinearLayout>
+
+
+
 
 </LinearLayout>

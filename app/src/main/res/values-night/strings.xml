@@ -2,4 +2,7 @@
 <resources>
     <string name="sliderscreen1_text">Welcome</string>
     <string name="sliderscreen3_text">Let\'s begin</string>
+    <string name="get_started">Get Started!</string>
+    <string name="welcome_cre">Welcome!\nCreate your account and\nyou will be on your way</string>
+    <string name="sign_up_to_">Sign up to be a member</string>
 </resources>

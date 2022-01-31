@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.main.app.Home
 import com.main.app.R
@@ -28,7 +29,7 @@ class StartgameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val playBtn = view.findViewById<GifImageButton>(R.id.playBtn)
+        val playBtn = view.findViewById<Button>(R.id.playBtn)
         playBtn.setOnClickListener {
             val intent = Intent(activity,Home::class.java)
             startActivity(intent)
