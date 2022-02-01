@@ -9,9 +9,11 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnFocusChangeListener
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -309,11 +311,10 @@ catch (e : Exception){
                                 bundle.putString("S_NAME", sName)
                                 bundle.putString("S_PRICE", sPrice)
                                 Log.i("MY_LOG","Stock Name for StockDetailPage: "+sName)
-                                var fm = fragmentManager
                                 StockDetailFragment().arguments = bundle
-                                if (fm != null) {
-                                    fm.beginTransaction().replace(R.id.pmgameactivity_fragment_container,StockDetailFragment::class.java,bundle).addToBackStack(null).commit()
-                                }
+
+                                    requireFragmentManager().beginTransaction().replace(R.id.pmgameactivity_fragment_container,StockDetailFragment::class.java,bundle).addToBackStack(null).commit()
+
 
                             }
                         })

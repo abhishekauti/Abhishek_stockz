@@ -5,9 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.main.app.R
+import com.main.app.adapters.RecyclerPortfilioAdapter
+import com.main.app.singleton.ViewClassData
 
 class FragmentPortfolioPM : Fragment() {
+
+    lateinit var recyclerview : RecyclerView
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -19,6 +26,21 @@ class FragmentPortfolioPM : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        recyclerview = view.findViewById(R.id.recyclerview)
+
+        val data = ArrayList<ViewClassData>()
+
+        for (i in 1..20) {
+            data.add(ViewClassData("name", "Item " + i))
+        }
+
+        val adapter = RecyclerPortfilioAdapter(context,data)
+
+        recyclerview.layoutManager =  LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+
+        recyclerview.adapter = adapter
 
         /*
         investedMoney.text = TODO("total currency - money used in buying stocks")

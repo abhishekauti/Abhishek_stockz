@@ -32,7 +32,6 @@ class PracticeModeFragment1 : Fragment() {
         createGameBtn = view.findViewById(R.id.createGameBtn)
 
         infoBtnPortfolio = view.findViewById(R.id.infoBtnPortfolio)
-        infoBtnMarketPlace = view.findViewById(R.id.infoBtnMarketPlace)
         infoBtnTimeFrame = view.findViewById(R.id.infoBtnTimeFrame)
         infoBtnGamePlay = view.findViewById(R.id.infoBtnGameType)
 
