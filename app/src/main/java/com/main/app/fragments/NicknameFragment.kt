@@ -1,5 +1,6 @@
 package com.main.app.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -30,7 +31,6 @@ class NicknameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val enterBtn = view.findViewById<Button>(R.id.name_btn)
-
         enterBtn.setOnClickListener {
             name = nametv.text.toString()
             if (name != "") {
