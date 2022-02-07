@@ -47,8 +47,16 @@ class LoginActivity : AppCompatActivity(), FragmentCommunicator {
 
     }
 
+    override fun gotoInstructionFragment(time: String) {
+        TODO("Not yet implemented")
+    }
+
     override fun gotoInstructionFragment() {
         // TODO("Not yet implemented")
+    }
+
+    override fun gotoTimerPickerFragment() {
+        TODO("Not yet implemented")
     }
 }
 

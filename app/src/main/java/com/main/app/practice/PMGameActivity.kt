@@ -3,6 +3,7 @@ package com.main.app.practice
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
@@ -27,6 +28,22 @@ class PMGameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pm_game)
 
+        val intent = intent
+        var hours =0
+        var minutes = 0
+        var seconds = 0
+        var milliseconds = 0
+        val TIMER = intent.getStringExtra("time")
+        if (TIMER != null) {
+            Log.e("Timer",TIMER)
+            val timers = TIMER.split(':')
+            hours = timers[0].toInt()
+            minutes = timers[1].toInt()
+            seconds = timers[2].toInt()
+        }
+        minutes = minutes + hours *60
+        seconds = seconds + minutes *60
+        milliseconds = seconds * 1000
         val toolbar : androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         timer = findViewById(R.id.timer)
@@ -35,12 +52,13 @@ class PMGameActivity : AppCompatActivity() {
 
 //        //anonmyous timer for the app bar
 runBlocking {
-    object : CountDownTimer(300000,1000) {
+    object : CountDownTimer(milliseconds.toLong(),1000) {
         override fun onTick(millisUntilFinished: Long) {
             val totalsec = (millisUntilFinished / 1000)
-            val min = totalsec/60
+            val hour = totalsec/3600
+            val min = (totalsec%3600)/60
             val sec = totalsec%60
-            timer.text = ""+ min + ":" + sec
+            timer.text = " "+hour + " : " +""+ min + " : " + sec
         }
 
         override fun onFinish() {
